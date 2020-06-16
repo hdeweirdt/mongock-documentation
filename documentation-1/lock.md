@@ -10,5 +10,5 @@ This could explain scenarios like Kubernetes initial delay, etc.
 
 ## How lock is implemented in Mongock
 
-This explains how the lock mechanism is implemented in mongock and clarify things like MongockTemplate, repository proxies, etc.  
+This explains how the lock mechanism is implemented in mongock and clarify things like MongockTemplate, repository proxies, etc.
 
