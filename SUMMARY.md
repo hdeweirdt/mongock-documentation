@@ -9,7 +9,7 @@
       * [Starting with Standalone](documentation-1/getting-started/quick-start/starting-with-standalone.md)
       * [Migration output](documentation-1/getting-started/quick-start/migration-output.md)
     * [Samples](documentation-1/getting-started/samples.md)
-  * [Version conpatibility](documentation-1/version-conpatibility.md)
+  * [Version compatibility](documentation-1/version-conpatibility.md)
   * [Creating changeLogs](documentation-1/untitled.md)
   * [Spring](documentation-1/spring.md)
   * [Standalone](documentation-1/standalone.md)
