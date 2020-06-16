@@ -2,8 +2,6 @@
 
 * [What is Mongock](README.md)
 * [Documentation](documentation-1/README.md)
-  * [Untitled](documentation-1/untitled-2.md)
-  * [Untitled](documentation-1/untitled-1.md)
   * [Getting started](documentation-1/getting-started/README.md)
     * [Main concepts](documentation-1/getting-started/main-concepts.md)
     * [Quick start](documentation-1/getting-started/quick-start/README.md)
