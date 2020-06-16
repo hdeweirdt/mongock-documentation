@@ -19,6 +19,7 @@
   * [Recovery](documentation-1/recovery.md)
   * [Validations](documentation-1/validations.md)
   * [Undo](documentation-1/undo.md)
+  * [Lock](documentation-1/lock.md)
   * [Preconditions](documentation-1/preconditions.md)
   * [Parallel Runners](documentation-1/parallel-runners.md)
   * [Legacy migration](documentation-1/legacy-migration.md)
