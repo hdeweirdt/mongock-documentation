@@ -31,11 +31,22 @@
   * [Fail-Fast](documentation/further-configuration/fail-fast.md)
   * [System Version](documentation/further-configuration/system-version.md)
   * [Track ignored](documentation/further-configuration/track-ignored.md)
-* [License](license.md)
-* [Contributing](contributing.md)
-* [Product Structure](product-structure.md)
-* [Pricing](pricing.md)
-* [FAQ](faq.md)
-* [Product roadmap](product-roadmap.md)
-* [Product changelog](product-changelog.md)
+
+## Pricing <a id="pricing-1"></a>
+
+* [Pricing table](pricing-1/pricing-table.md)
+* [Pro Free trial](pricing-1/pro-free-trial.md)
+* [Billing policy](pricing-1/billing-policy.md)
+
+## Resources
+
+* [Mongock Support Policy](resources/mongock-support-policy.md)
+* [FAQ](resources/faq.md)
+* [Who uses Mongock](resources/who-uses-mongock.md)
+* [Testimonials](resources/testimonials.md)
+* [Product Structure](resources/product-structure.md)
+* [Product roadmap](resources/product-roadmap.md)
+* [Product changelog](resources/product-changelog.md)
+* [License](resources/license.md)
+* [Contributing](resources/contributing.md)
 

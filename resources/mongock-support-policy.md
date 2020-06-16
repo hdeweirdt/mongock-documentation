@@ -1,0 +1,2 @@
+# Mongock Support Policy
+
