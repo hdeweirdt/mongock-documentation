@@ -1,2 +1,2 @@
-# Contributing
+# Open source
 

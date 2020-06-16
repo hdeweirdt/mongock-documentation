@@ -42,5 +42,5 @@
 * [Product roadmap](resources/product-roadmap.md)
 * [Product changelog](resources/product-changelog.md)
 * [License](resources/license.md)
-* [Contributing](resources/contributing.md)
+* [Open source](resources/contributing.md)
 
