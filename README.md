@@ -4,5 +4,5 @@
 
 ![](.gitbook/assets/screenshot-2020-06-16-at-08.38.25.png)
 
-![](.gitbook/assets/screenshot-2020-06-16-at-08.40.04.png)
+![](.gitbook/assets/screenshot-2020-06-16-at-08.42.35.png)
 
