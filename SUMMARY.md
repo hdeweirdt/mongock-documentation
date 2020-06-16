@@ -44,4 +44,5 @@
 * [Product changelog](resources/product-changelog.md)
 * [License](resources/license.md)
 * [Open source](resources/contributing.md)
+* [Other NoSql databases](resources/other-nosql-databases.md)
 
