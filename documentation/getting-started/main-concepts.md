@@ -35,14 +35,57 @@ This is the Changock's driver concept taken to a lower level: MongoDB version, M
 * mongodb-springdata-v2-driver
 * mongodb-springdata-v3-driver
 
+```java
+MongockConnectionDriver driver = new SpringDataMongo3Driver(mongoTemplate);
+```
+
 Although one of the main goals of this is to keep providing support for legacy drivers, while continue adding new drivers, once a new version\(for example sync-4-driver\) is added, the legacy one\(v3-driver\) will be still supported, but not evolved, meaning this that we won't provide any new feature for it, just bug fixes. However the level of support will depend on the type of Mongock edition you are using. Please take a look to [support policy](../../resources/mongock-support-policy.md).
 
 ## Runner
 
-This is also the same Changock's concept, just specialised for MongoDB. Runners are the ones dealing with the process logic and framework. For example, there is a runner for Java standalone applications\(with no framework at all\) or for specific frameworks\(and versions\), if it's needed or useful. Currently Mongock provides the following runners:
+This is also the same Changock concept, just specialised for MongoDB. Runners are the ones dealing with the process logic and framework. For example, there is a runner for Java standalone applications\(with no framework at all\) or for specific frameworks\(and versions\), if it's needed or useful. Currently Mongock provides the following runners:
 
 * mongock-standalone
 * mongock-spring-v5
 
 As drivers, legacy versions of the same driver will be supported\(subscribed to the support policy applied\), but won't be enhanced. Please take a look to [support policy](../../resources/mongock-support-policy.md).
+
+## Builder
+
+Once again, it's the same as the Changock concept: Builders are the tool to create a Mongock runner\(with the specific driver\) to process your migrations.
+
+{% tabs %}
+{% tab title="Spring 5 ApplicationRunner" %}
+```java
+MongockSpring5.builder()
+        .setDriver(getDriver())
+        .addChangeLogsScanPackages("changelogs_package_path")
+        .setSpringContext(springContext)
+        .buildApplicationRunner();
+```
+{% endtab %}
+
+{% tab title="Spring 5 InitializingBean" %}
+```java
+MongockSpring5.builder()
+        .setDriver(getDriver())
+        .addChangeLogsScanPackages("changelogs_package_path")
+        .setSpringContext(springContext)
+        .buildInitializingBeanRunner();
+```
+{% endtab %}
+
+{% tab title="Standalone" %}
+```java
+MongockStandalone.builder()
+        .setDriver(getDriver())
+        .addChangeLogsScanPackage("changelogs_package_path")
+        .buildRunner();
+```
+{% endtab %}
+{% endtabs %}
+
+{% hint style="info" %}
+Although builders will be always used, when opting for annotation approach, Mongock releases you from this task by taking care of everything
+{% endhint %}
 
