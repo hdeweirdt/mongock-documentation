@@ -2,7 +2,7 @@
 
 **Mongock** is a java MongoDB tool for tracking, managing and applying database schema changes across all your environments based on a coding approach.
 
-We want to help development teams to develop, test, deploy and release easier and in a more agile way.
+## What is Changock
 
 ## Why Mongock
 

@@ -28,6 +28,7 @@
     * [Fail-Fast](documentation/further-configuration/fail-fast.md)
     * [System Version](documentation/further-configuration/system-version.md)
     * [Track ignored](documentation/further-configuration/track-ignored.md)
+  * [Best practices](documentation/best-practices.md)
 * [Pricing](pricing/README.md)
   * [Pricing table](pricing/pricing-table.md)
   * [Pro Free trial](pricing/pro-free-trial.md)
