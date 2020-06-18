@@ -52,7 +52,9 @@ As drivers, legacy versions of the same driver will be supported\(subscribed to 
 
 ## Builder
 
-Once again, it's the same as the Changock concept: The mechanism to build a Mongock instance\(with the specific driver\) to process your migrations. In version 4 we have added a new approach in Spring based on annotation that makes all the work for you. However, if you need to have more control over the bean creation or you are not using Spring or any other reason, you still have the builder manual approach available.
+Once again, it's the same as the Changock concept: The mechanism to build a Mongock instance\(with the specific driver\) to process your migrations. 
+
+In version 4 we have added a new approach in Spring based on annotation that makes all the work for you. However, if you need to have more control over the bean creation or you are not using Spring or any other reason, you still have the builder manual approach available.
 
 {% tabs %}
 {% tab title="Spring 5 ApplicationRunner" %}
