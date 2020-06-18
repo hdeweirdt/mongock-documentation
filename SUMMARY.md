@@ -13,7 +13,7 @@
   * [Lock](documentation/lock-1.md)
   * [Injecting custom beans](documentation/injecting-custom-dependencies-to-changesets.md)
   * [Legacy migration](documentation/legacy-migration.md)
-  * [Spring profiles](documentation/spring-profiles.md)
+  * [Spring specific](documentation/spring-profiles.md)
   * [Further configuration](documentation/further-configuration.md)
   * [Transactions](documentation/transactions.md)
   * [Recovery](documentation/recovery.md)
