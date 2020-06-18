@@ -126,7 +126,7 @@ spring:
 {% endtab %}
 {% endtabs %}
 
-This example will execute changeSet methods 1, 2 and 3, because the specified systemVersion in the changeSet should be greater equals the **startSystemVersion** and lower than endSystemVersion. In other words, startSystemVersion is inclusive, while endSystemVersion is not.
+This example will execute changeSet methods 1, 2 and 3, because the specified systemVersion in the changeSet should be greater equals the **startSystemVersion** and lower than **endSystemVersion**. In other words, startSystemVersion is inclusive, while endSystemVersion is not.
 
 ## Best practices
 
