@@ -40,7 +40,7 @@ The **@ChangeSet** parameters are:
 | author | String | Mandatory | Author of a change set |
 | order | String | null | String for sorting change sets in one changeLog. Sorting in alphabetical order, ascending. It can be a number, a date etc. |
 | runAlways | Boolean | false | If true, changeSet will always be executed |
-| systemVersion | String | "0" | Defines which SystemVersion the changeSet is linked to.  See [System Version](further-configuration/system-version.md) for more information. |
+| systemVersion | String | "0" | Defines which SystemVersion the changeSet is linked to.  See [System Version]() for more information. |
 
 ### Defining ChangeSet methods
 

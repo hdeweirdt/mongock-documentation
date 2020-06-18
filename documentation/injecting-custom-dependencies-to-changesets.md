@@ -1,2 +1,2 @@
-# Injecting custom dependencies to ChangeSets
+# Injecting custom beans
 
