@@ -40,7 +40,7 @@ The **@ChangeSet** parameters are:
 | author | String | Mandatory | Author of a change set |
 | order | String | null | String for sorting change sets in one changeLog. Sorting in alphabetical order, ascending. It can be a number, a date etc. |
 | runAlways | Boolean | false | If true, changeSet will always be executed |
-| systemVersion | String | "0" | Defines in which SystemVersion the changeSet is relate to.  See [System Version](further-configuration/system-version.md) for more information. |
+| systemVersion | String | "0" | Defines which SystemVersion the changeSet is linked to.  See [System Version](further-configuration/system-version.md) for more information. |
 
 ### Defining ChangeSet methods
 
@@ -61,7 +61,7 @@ public void changeWithMongoDatabbase(MongoDatabase db) {
 
 @ChangeSet(order = "005", id = "changeWithMongockTemplate", author = "mongock")
 public void changeWithMongockTemplate(MongockTemplate mongockTemplate) {
-  // type: ocom.github.cloudyrock.mongock.driver.mongodb.springdata.[v2 | v3].decorator.impl.MongockTemplate
+  // type: com.github.cloudyrock.mongock.driver.mongodb.springdata.[v2 | v3].decorator.impl.MongockTemplate
   // You must use MongockTemplate instead of MongoTemplate. It's just a wrapper/decorator
   // so it provides exactly the same API. You won't miss anything
   // example:
