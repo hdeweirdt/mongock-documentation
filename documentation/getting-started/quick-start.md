@@ -6,7 +6,11 @@ As discussed, Mongock provides two approaches: Annotation approach and builder a
 
 **@EnableMongock** provides a more Spring friendly and easier approach, while you don't miss any configuration property. However, there are some scenarios where the traditional builder approach is more convenient. For example if you need more control over the bean creation or when you are not using Spring at all.
 
-In this section you will see a quick introduction on how to start with both approaches easily.
+In this section you will see a quick introduction on how to start with both approaches easily. 
+
+{% hint style="info" %}
+These are the unique steps you need to run Mongock. The rest of the documentation is about enhancing  the "configuration step" to use/tune the different features.
+{% endhint %}
 
 ## Common steps
 
