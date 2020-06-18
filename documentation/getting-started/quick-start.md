@@ -2,15 +2,15 @@
 
 ## Instantiation approaches: Annotation vs builder
 
-As discussed, Mongock provides to approaches: Annotation approach and builder approach.
+As discussed, Mongock provides two approaches: Annotation approach and builder approach.
 
-We recommend annotation approach as it's more Spring friendly an easy while you don't miss anything. However, there are some scenarios where you should use the traditional builder approach. For example if you need more control over the bean creation or when you are not using Spring at all.
+@EnableMongock provides a more Spring friendly and easier approach, while you don't miss any configuration property. However, there are some scenarios where the traditional builder approach is more convenient. For example if you need more control over the bean creation or when you are not using Spring at all.
 
 In this section you will see a quick introduction on how to start with both approaches easily.
 
 ## Common steps
 
-Both approaches share the first 3 steps related to your pom file.
+Both approaches share the first 3 steps. All of them related to your pom file.
 
 1- **Add the last version of Mongock bom to your pom file**
 
@@ -28,7 +28,7 @@ Both approaches share the first 3 steps related to your pom file.
 </dependencyManagement>
 ```
 
-2- **Add runner and driver dependencies**. In this example we use the Mongock runner for Spring 5.x.x and Mongock driver for Spring Data MongoDB 3.x.x. For other version, please refer to [Version compatibility](../version-conpatibility.md).
+2- **Add runner and driver dependencies**. In this example we use the Mongock runner for Spring 5.x.x and Mongock driver for Spring Data MongoDB 3.x.x. For other versions, please refer to [Version compatibility](../version-conpatibility.md).
 
 ```markup
 
@@ -43,13 +43,13 @@ Both approaches share the first 3 steps related to your pom file.
 </dependency>
 ```
 
-3-  **Add your MongoDB and Spring Data dependencies**. Mongock doesn't import any MongoDB or Spring Data library in order to avoid transitive dependency issues. So you need to provide them.
+3-  **Add your MongoDB and Spring Data dependencies**. In order to avoid transitive dependency issues, Mongock doesn't import any MongoDB or Spring Data library. So you need to provide them.
 
 ## Annotation approach
 
 Once you have successfully imported the necessary Mongock dependencies, you only need to  specify your changeLog package and tell Spring your are using Mongock. For this you only need the 2 following steps:
 
-1- **Add your changeLog package path to your property file**. Minimal configuration requires at least one changeLog package\(it's an array, so you can add more than one\), but anything you can configure manually with builder, you can do as well with properties. However note that Mongock provides default values. Worthy noticing the lock, which is now enabled by default, unlike older versions where you need to explicitly enable it for backward compatibility.
+1- **Add your changeLog package path to your property file**. Minimal configuration requires at least one changeLog package\(it's an array, so you can add more than one\), but anything you can configure manually with the builder, you can do it as well with properties. However note that Mongock provides default values. Worthy noticing the lock, which is now enabled by default, unlike older versions where you need to explicitly enable it, due to backward compatibility.
 
 ```yaml
 spring:
