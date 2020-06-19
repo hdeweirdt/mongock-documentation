@@ -119,6 +119,6 @@ MongockStandalone.builder()
 {% endtabs %}
 
 {% hint style="info" %}
-Note that for standalone we have used MongoSync4Driver as it's a more common scenario. Please take a look to our [Version compatibility](../version-conpatibility.md) section.
+Note that for standalone example we have used MongoSync4Driver as it's a more common scenario. Please take a look to our [Version compatibility](../version-conpatibility.md) section.
 {% endhint %}
 
