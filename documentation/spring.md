@@ -96,38 +96,60 @@ However, if you opt for the manual builder approach, you need to create the driv
 
 #### Configuration
 
-Driver configuration is very simple, but still there are a couple of parameters you can configure
+Driver configuration is very simple, but still there are a couple of properties you can configure related to the collections used and lock parameters
 
-* **changeLogCollectionName**: It's the name of the collection where the changeLog history will be stored
+* **changeLogCollectionName**: It's the name of the collection where the changeLog history is stored
+* **lockCollectionName**: The name of the collection where the pessimistic lock is stored
+* **lockAcquiredForMinutes**: asd
+* **maxWaitingForLockMinutes**: asda
+* **maxTries**: asd
 
 {% tabs %}
 {% tab title="properties" %}
-```
-
+```yaml
+spring:
+  mongock:
+    change-log-collection-name: newChangeLogCollectionName
+    lock-collection-name: newLockCollectionName
+    lock-acquired-for-minutes: 3
+    max-waiting-for-lock-minutes: 4
+    max-tries: 3
 ```
 {% endtab %}
 
 {% tab title="v3" %}
 ```java
 MongoCore3Driver driver = new MongoCore3Driver(mongoDatabase);
+driver.setChangeLogCollectionName("newChangeLogCollectionName");
+driver.setLockCollectionName("newLockCollectionName");
+driver.setLockSettings(3, 4, 3);
 ```
 {% endtab %}
 
 {% tab title="sync-v4" %}
 ```java
 MongoCore3Driver driver = new MongoSync4Driver(mongoDatabase);
+driver.setChangeLogCollectionName("newChangeLogCollectionName");
+driver.setLockCollectionName("newLockCollectionName");
+driver.setLockSettings(3, 4, 3);
 ```
 {% endtab %}
 
 {% tab title="spring-data-v2" %}
 ```java
 MongoCore3Driver driver = new SpringDataMongo2Driver(mongoTemplate);
+driver.setChangeLogCollectionName("newChangeLogCollectionName");
+driver.setLockCollectionName("newLockCollectionName");
+driver.setLockSettings(3, 4, 3);
 ```
 {% endtab %}
 
 {% tab title="spring-data-v3" %}
 ```java
 MongoCore3Driver driver = new SpringDataMongo3Driver(mongoTemplate);
+driver.setChangeLogCollectionName("newChangeLogCollectionName");
+driver.setLockCollectionName("newLockCollectionName");
+driver.setLockSettings(3, 4, 3);
 ```
 {% endtab %}
 {% endtabs %}
