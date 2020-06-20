@@ -96,13 +96,13 @@ However, if you opt for the manual builder approach, you need to create the driv
 
 #### Configuration
 
-Driver configuration is very simple, but still there are a couple of properties you can configure related to the collections used and lock parameters
+Driver configuration is very simple, but there are still a couple of properties you can configure related to the collections and lock parameters
 
 * **changeLogCollectionName**: It's the name of the collection where the changeLog history is stored
 * **lockCollectionName**: The name of the collection where the pessimistic lock is stored
-* **lockAcquiredForMinutes**: asd
-* **maxWaitingForLockMinutes**: asda
-* **maxTries**: asd
+* **lockAcquiredForMinutes**: Number of minutes mongock will acquire the lock for. It will refresh the lock when is close to be expired anyway.
+* **maxWaitingForLockMinutes**: Max minutes mongock will wait for the lock in every try.
+* **maxTries**: Max tries when the lock is held by another mongock instance.
 
 {% tabs %}
 {% tab title="properties" %}
@@ -117,7 +117,7 @@ spring:
 ```
 {% endtab %}
 
-{% tab title="v3" %}
+{% tab title="v3-driver" %}
 ```java
 MongoCore3Driver driver = new MongoCore3Driver(mongoDatabase);
 driver.setChangeLogCollectionName("newChangeLogCollectionName");
@@ -126,7 +126,7 @@ driver.setLockSettings(3, 4, 3);
 ```
 {% endtab %}
 
-{% tab title="sync-v4" %}
+{% tab title="sync-v4-driver" %}
 ```java
 MongoCore3Driver driver = new MongoSync4Driver(mongoDatabase);
 driver.setChangeLogCollectionName("newChangeLogCollectionName");
@@ -135,7 +135,7 @@ driver.setLockSettings(3, 4, 3);
 ```
 {% endtab %}
 
-{% tab title="spring-data-v2" %}
+{% tab title="springdata-v2-driver" %}
 ```java
 MongoCore3Driver driver = new SpringDataMongo2Driver(mongoTemplate);
 driver.setChangeLogCollectionName("newChangeLogCollectionName");
@@ -144,7 +144,7 @@ driver.setLockSettings(3, 4, 3);
 ```
 {% endtab %}
 
-{% tab title="spring-data-v3" %}
+{% tab title="springdata-v3-driver" %}
 ```java
 MongoCore3Driver driver = new SpringDataMongo3Driver(mongoTemplate);
 driver.setChangeLogCollectionName("newChangeLogCollectionName");
