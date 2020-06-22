@@ -1,6 +1,6 @@
 # Driver
 
-We have already mention the concept driver in [Main concepts](getting-started/main-concepts.md#driver). Drivers are the part of Mongock in charge of dealing with MongoDB.
+We have already mention the concept driver in [Main concepts](main-concepts.md#driver). Drivers are the part of Mongock in charge of dealing with MongoDB.
 
 ## Motivation
 
@@ -31,9 +31,12 @@ Currently Mongock provides the following drivers:
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">Mongock driver</th>
-      <th style="text-align:left">Java library</th>
-      <th style="text-align:left">Mongock Runners compatible</th>
+      <th style="text-align:left"><b>Mongock driver</b>
+      </th>
+      <th style="text-align:left"><b>Java library</b>
+      </th>
+      <th style="text-align:left"><b>Mongock runners compatible </b>
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -44,8 +47,10 @@ Currently Mongock provides the following drivers:
       <td style="text-align:left">
         <p></p>
         <ul>
-          <li>mongock-standalone:4.x</li>
-          <li>mongock-spring-v5</li>
+          <li><b>mongock-standalone:4.x</b>
+          </li>
+          <li><b>mongock-spring-v5: 4.x</b>
+          </li>
         </ul>
       </td>
     </tr>
@@ -56,8 +61,10 @@ Currently Mongock provides the following drivers:
       <td style="text-align:left">
         <p></p>
         <ul>
-          <li>mongock-standalone: 4.x</li>
-          <li>mongock-spring-v5: 4.x</li>
+          <li><b>mongock-standalone: 4.x</b>
+          </li>
+          <li><b>mongock-spring-v5: 4.x</b>
+          </li>
         </ul>
       </td>
     </tr>
@@ -68,8 +75,10 @@ Currently Mongock provides the following drivers:
       <td style="text-align:left">
         <p></p>
         <ul>
-          <li>mongock-standalone: 4.x</li>
-          <li>mongock-spring-v5: 4.x</li>
+          <li><b>mongock-standalone: 4.x</b>
+          </li>
+          <li><b>mongock-spring-v5: 4.x</b>
+          </li>
         </ul>
       </td>
     </tr>
@@ -80,19 +89,21 @@ Currently Mongock provides the following drivers:
       <td style="text-align:left">
         <p></p>
         <ul>
-          <li>mongock-standalone: 4.x</li>
-          <li>mongock-spring-v5: 4.x</li>
+          <li><b>mongock-standalone: 4.x</b>
+          </li>
+          <li><b>mongock-spring-v5: 4.x</b>
+          </li>
         </ul>
       </td>
     </tr>
   </tbody>
 </table>
 
-## How to use it
+## Building time: Driver
 
 When use it the annotation approach, you just need to import the required Mongock driver dependency, annotate your SpringBootApplication with **@EnableMongock** and everything is done for you.  All the configuration should be provided via properties file.
 
-However, if you opt for the manual builder approach, you need to create the driver yourself and give it to the MongockBuilder.
+However, if you opt for the manual builder approach, you need to create the driver yourself and give it to the Mongock builder.
 
 #### Configuration
 

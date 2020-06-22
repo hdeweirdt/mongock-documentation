@@ -2,11 +2,8 @@
 
 * [What is Mongock](README.md)
 * [Documentation](documentation/README.md)
-  * [Getting started](documentation/getting-started/README.md)
-    * [Main concepts](documentation/getting-started/main-concepts.md)
-    * [Quick start](documentation/getting-started/quick-start.md)
-    * [Samples](documentation/getting-started/samples.md)
-  * [Mongock modules](documentation/version-conpatibility.md)
+  * [Main concepts](documentation/main-concepts.md)
+  * [Quick start](documentation/quick-start.md)
   * [ChangeLogs](documentation/untitled.md)
   * [Driver](documentation/spring.md)
   * [Runner](documentation/standalone.md)
