@@ -19,6 +19,7 @@
   * [Preconditions](documentation/preconditions.md)
   * [Parallel Runners](documentation/parallel-runners.md)
   * [Best practices](documentation/best-practices.md)
+  * [Testing with Mongock](documentation/testing-with-mongock.md)
 * [Pricing](pricing/README.md)
   * [Pricing table](pricing/pricing-table.md)
   * [Pro Free trial](pricing/pro-free-trial.md)
