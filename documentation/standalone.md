@@ -40,11 +40,14 @@ However, if you opt for the manual builder approach, you need to build the runne
 | Configuration parameter | Default value | Type | Description | LInk |
 | :--- | :--- | :--- | :--- | :--- |
 | changeLogScanPackage | mandatory. At least one. | List&lt;String&gt; | Instructs Mongock where to find the changeLog classes.  |  |
-| metadata | null | Map&lt;String, Object&gt; | Custom data attached to the migration. It will added to all changes in changeLog collection |  |
-| startSystemVersion | "0" | String | System version to start with |  |
-| endSystemVersions | MAX\_VALUE | String | System version to end with. |  |
-| throwExceptionIfCannot.... | true | boolean | Mongock will throw MongockException if lock can not be obtained |  |
-| legacyMigration | null | Object | Configuration related to migrate from legacy systems. |  |
+| metadata | null | Map&lt;String, Object&gt; | Custom data attached to the migration. It will added to all changes in changeLog collection | [link](further-configuration.md#metadata) |
+| startSystemVersion | "0" | String | System version to start with | [link](further-configuration.md#systemversion) |
+| endSystemVersions | MAX\_VALUE | String | System version to end with. | [link](further-configuration.md#systemversion) |
+| LockAcquiredForMinutes | 3 | Long | Indicates how long the lock will be hold once acquired in minutes. Builder method **setLockConfig** | [link](lock-1.md) |
+| maxWaitingForLockMinutes | 4 | Long | Indicates max time in minutes to wait for the lock in each try. Builder method **setLockConfig** | [link](lock-1.md) |
+| maxTries | 3 | int | Number of times Mongock will try to acquire the lock. Builder method **setLockConfig** | [link](lock-1.md) |
+| throwExceptionIfCannot.... | true | boolean | Mongock will throw MongockException if lock can not be obtained. Builder method **setLockConfig** | [link](lock-1.md) |
+| legacyMigration | null | Object | Configuration related to migrate from legacy systems. | [link](legacy-migration.md) |
 
 {% tabs %}
 {% tab title="properties" %}
