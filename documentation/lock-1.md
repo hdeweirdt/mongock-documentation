@@ -1,8 +1,36 @@
 # Lock
 
-In order to execute the changeLogs, Mongock needs to manage the lock to ensure that one Mongock instance not only executes a changeLog at a time, but also access to the database, as otherwise it could run into a race condition. By default Mongock will ensure the Lock is taken before starting the migration. If it's already taken by some other instance, it will try to acquire it up to 3 times. If it doesn't take it after these 3 times, waiting 4 minutes every time, it will throw an exception and abort the migration. However, you can configure to modify this behaviour, from the maximum number of tries to not throwing the exception if the lock cannot be obtained.
+Mongock uses a pessimistic lock to synchronise multiple Mongock instances accessing to the same database. 
+
+the lock will be ensured in every access to
 
 ## Overview
 
-Although this is completely configurable, the default, expected and recommended behaviour is that before starting a migration Mongock will acquire the lock, trying up to certain number of times\(if it's already taken or there is any connection issue to the database\). Once taken, it will "reserve" it initially for some number of minutes\(**lockAcquiredForMinutes**\). When that time is near to expire, Mongock it will extend it using the same amount of minutes. This process will be repeatedly performed until the migration is finished.
+Although this is completely configurable, the default, expected and recommended behaviour is Mongock acquiring the lock before starting the migration, trying up to certain number of times\(if it's already taken or there is any connection issue\). Once taken, it will "reserve" it initially for some time\(**lockAcquiredForMinutes**\). Then  Mongock will ensure the lock is acquired in every access to the database. When the time for which the lock was acquired is near to expire, Mongock will extend it using the same amount of minutes\(**lockAcquiredForMinutes**\). This process will be repeatedly performed until the migration is finished in order to ensure the lock is acquired until the end of the migration.
+
+#### What happens if the lock is acquired for a shorter period than the migration and cannot be re-acquired?
+
+This is very unlike as the only instance allowed to update the lock collection is the one in possession of the lock, but it's technically possible to experiment connection issues when refreshing the lock. When this happens, the lock is implicitly released\(or about to\) because it is expired, so  the current migration is aborted and any other Mongock instance can acquire it. The result of the migration will depend on wether the migration is [transactionable](transactions.md) or [provides recovery process](recovery.md). 
+
+#### How is the lock ensured in every database access?
+
+Mongock uses two mechanisms for this. Static and dynamic lock guardian.
+
+* **static lock guardian**: This is mainly used for driver and  database components, known in advance, such as MongoDatabase, MongoCollection, MongoTemplate\(MongockTemplate\), etc. This mechanism is based on the decorator pattern, so it is just a wrap wrap to ensure the lock is acquisition.
+
+{% hint style="success" %}
+**MongockTemplate** must be used instead of MongoTemplate.
+{% endhint %}
+
+* **dynamic lock guardian**: This used for the custom objects used in changeSet methods, like repositories, etc. This implementation uses the JDK dynamic proxy instrumentation. While it has its pros and cons, it provides a fair balance between performance and framework intrusion. Unfortunately, one of the well known  limitations is that only interfaces can be proxied, so for this reason Mongock only allows interface for custom beans in changeSet methods. Please consult [Injecting custom beans](injecting-custom-dependencies-to-changesets.md) for more information.
+
+{% hint style="warning" %}
+**Custom beans** in changeSet methods **must be interfaces**.
+{% endhint %}
+
+## Configuration
+
+There are just 4 parameters to tune the lock.You can configure them by using properties or builder. Please see the [runner configuration](standalone.md#configuration) section for more information.
+
+
 
