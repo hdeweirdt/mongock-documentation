@@ -14,7 +14,7 @@ These are the unique steps you need to run Mongock. The rest of the documentatio
 
 ## Common steps
 
-Both approaches share the first 3 steps. All of them related to your pom file.
+Both approaches share the first 4 steps. All of them related to your pom file.
 
 1- **Add the last version of Mongock bom to your pom file**
 
@@ -32,26 +32,129 @@ Both approaches share the first 3 steps. All of them related to your pom file.
 </dependencyManagement>
 ```
 
-2- **Add runner and driver dependencies**. In this example we use the Mongock runner for Spring 5.x.x and Mongock driver for Spring Data MongoDB 3.x.x. For other versions, please refer to [Version compatibility]().
+2- **Add runner dependency.** For more information, check the [runner compatibility table](standalone.md#runners-types-and-compatibility-table).
 
+{% tabs %}
+{% tab title="Spring 5" %}
 ```markup
-
 <dependency>
     <groupId>com.github.cloudyrock.mongock</groupId>
     <artifactId>mongock-spring-v5</artifactId>
- </dependency>
+</dependency>
+```
+{% endtab %}
 
+{% tab title="Mongock Standalone" %}
+```markup
+<dependency>
+    <groupId>com.github.cloudyrock.mongock</groupId>
+    <artifactId>>mongock-standalone</artifactId>
+</dependency>
+```
+{% endtab %}
+{% endtabs %}
+
+3- **Add driver dependency.** For more information, check the [driver compatibility table](spring.md#driver-types-and-compatibility-table).
+
+{% tabs %}
+{% tab title="Spring data 3" %}
+```markup
 <dependency>
     <groupId>com.github.cloudyrock.mongock</groupId>
     <artifactId>mongodb-springdata-v3-driver</artifactId>
 </dependency>
 ```
+{% endtab %}
 
-3-  **Add your MongoDB and Spring Data dependencies**. In order to avoid transitive dependency issues, Mongock doesn't import any MongoDB or Spring Data library. So you need to provide them.
+{% tab title="Spring data 2" %}
+```markup
+<dependency>
+    <groupId>com.github.cloudyrock.mongock</groupId>
+    <artifactId>mongodb-springdata-v2-driver</artifactId>
+</dependency>
+```
+{% endtab %}
 
-## Annotation approach
+{% tab title="MongoDB sync driver 4" %}
+```markup
+<dependency>
+    <groupId>com.github.cloudyrock.mongock</groupId>
+    <artifactId>mongodb-sync-v4-driver</artifactId>
+</dependency>
+```
+{% endtab %}
 
-Once you have successfully imported the necessary Mongock dependencies, you only need to  specify your changeLog package and tell Spring your are using Mongock. For this you only need the 2 following steps:
+{% tab title="MongoDB driver 3" %}
+```markup
+<dependency>
+    <groupId>com.github.cloudyrock.mongock</groupId>
+    <artifactId>mongodb-v3-driver</artifactId>
+</dependency>
+```
+{% endtab %}
+{% endtabs %}
+
+3-  **Add your MongoDB and Spring Data dependencies**. In order to avoid transitive dependency issues, Mongock doesn't import any MongoDB or Spring Data library. So you need to provide them. For more information, check the [driver compatibility table](spring.md#driver-types-and-compatibility-table).
+
+{% tabs %}
+{% tab title="Spring data 3" %}
+```markup
+<dependency>
+    <groupId>org.mongodb</groupId>
+    <artifactId>mongodb-driver-sync</artifactId>
+    <version>${mongodb.driver-sync.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.springframework.data</groupId>
+    <artifactId>spring-data-mongodb</artifactId>
+    <version>${mongodb.spring-data.v3.version}</version>
+</dependency>
+```
+{% endtab %}
+
+{% tab title="Spring data 2" %}
+```markup
+<dependency>
+    <groupId>org.mongodb</groupId>
+    <artifactId>mongo-java-driver</artifactId>
+    <version>${mongodb.java-driver}</version>
+</dependency>
+<dependency>
+    <groupId>org.springframework.data</groupId>
+    <artifactId>spring-data-mongodb</artifactId>
+    <version>${mongodb.spring-data.v2.version}</version>
+</dependency>
+```
+{% endtab %}
+
+{% tab title="MongoDB sync driver 4" %}
+```markup
+<dependency>
+    <groupId>org.mongodb</groupId>
+    <artifactId>mongodb-driver-sync</artifactId>
+    <version>${mongodb.driver-sync.version}</version>
+</dependency>
+```
+{% endtab %}
+
+{% tab title="MongoDB driver 3" %}
+```markup
+<dependency>
+    <groupId>org.mongodb</groupId>
+    <artifactId>mongo-java-driver</artifactId>
+    <version>${mongodb.java-driver}</version>
+</dependency>
+```
+{% endtab %}
+{% endtabs %}
+
+## Building and running Mongock
+
+Once you have successfully imported the necessary dependencies, there are two ways you can build and run Mongock. In most cases, when using Spring framework, the most easy and convenient way is the **annotation approach**. However, sometimes you are not using Spring or you need more control over your Mongock bean. In that case you should opt for the **traditional builder approach**.
+
+### Annotation approach
+
+With the annotation approach you only need to  specify your changeLog package, as minimal configuration, and tell Spring your are using Mongock. For this you only need the 2 following steps:
 
 1- **Add your changeLog package path to your property file**. Minimal configuration requires at least one changeLog package\(it's an array, so you can add more than one\), but anything you can configure manually with the builder, you can do it as well with properties. However note that Mongock provides default values. Worthy noticing the lock, which is now enabled by default, unlike older versions where you need to explicitly enable it, due to backward compatibility.
 
@@ -74,7 +177,7 @@ public class App {
 }
 ```
 
-## **Traditional** builder approach
+### **Traditional** builder approach
 
 While the annotation approach is more convenient, the traditional builder approach is useful when you need more control over your bean creation, or inevitable if you are not using Spring.
 
@@ -120,6 +223,6 @@ MongockStandalone.builder()
 {% endtabs %}
 
 {% hint style="info" %}
-Note that for standalone example we have used MongoSync4Driver as it's a more common scenario. Please take a look to our [Version compatibility]() section.
+Note that for standalone example we have used MongoSync4Driver as it's a more common scenario. Please take a look to our driver [version compatibility table](spring.md#driver-types-and-compatibility-table).
 {% endhint %}
 
