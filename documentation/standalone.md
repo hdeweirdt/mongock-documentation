@@ -37,9 +37,10 @@ However, if you opt for the manual builder approach, you need to build the runne
 
 #### Configuration
 
-| Configuration parameter | Default value | Type | Description | LInk |
+| Configuration parameter | Default value | Type | Description | Link |
 | :--- | :--- | :--- | :--- | :--- |
-| changeLogScanPackage | mandatory. At least one. | List&lt;String&gt; | Instructs Mongock where to find the changeLog classes.  |  |
+| changeLogScanPackage | mandatory. At least one. | List&lt;String&gt; | Instructs Mongock where to find the changeLog classes.  | [link](untitled.md) |
+| springContext | mandatory for Spring | ApplicationContext | Sets the spring Application context for bean injections into ChangeSet methods. It's where the custom beans, MongoTemplate, profiles, etc. is take from. |  |
 | metadata | null | Map&lt;String, Object&gt; | Custom data attached to the migration. It will added to all changes in changeLog collection | [link](further-configuration.md#metadata) |
 | startSystemVersion | "0" | String | System version to start with | [link](further-configuration.md#systemversion) |
 | endSystemVersions | MAX\_VALUE | String | System version to end with. | [link](further-configuration.md#systemversion) |
@@ -54,7 +55,26 @@ However, if you opt for the manual builder approach, you need to build the runne
 ```yaml
 spring:
   mongock:
-    define all properties: asdads
+    change-logs-scan-package:
+      - com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.initializer
+      - com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.updater
+    metadata:
+      change-motivation: Missing field in collection
+      decided-by: Tom Waugh
+    start-system-version: 1.3
+    end-system-version: 6.4
+    lock-acquired-for-minutes: 10
+    max-waiting-for-lock-minutes: 4
+    max-tries: 5
+    throw-exception-if-cannot-obtain-lock: true
+    legacy-migration:
+      collection-name: mongobeeChangeLogCollection
+      mapping-fields:
+        change-id: legacyChangeIdField
+        author: legacyAuthorField
+        timestamp: legacyTimestampField
+        change-log-class: legacyChangeLogClassField
+        change-set-method: legacyChangeSetMethodField
 ```
 {% endtab %}
 
