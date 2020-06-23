@@ -52,6 +52,10 @@ However, if you opt for the manual builder approach, you need to build the runne
 | **trackIgnored** | false | boolean | Specifies if ignored changeSets\(already executed, etc.\) should be track in the changeLog collection with **IGNORED** status | [link](further-configuration.md#trackignored) |
 | **enabled** | true | boolean | If false, will disable Mongock execution | [link](further-configuration.md#enable) |
 
+{% hint style="warning" %}
+When using the builder method **setLockConfig**, which takes lockAcquiredForMinutes, maxWaitingForLockMinutes and maxTries as parameters, **will implicitly set throwExceptionIfCannotObtainLock to true.**
+{% endhint %}
+
 {% tabs %}
 {% tab title="properties" %}
 ```yaml

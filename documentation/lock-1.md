@@ -32,5 +32,14 @@ Mongock uses two mechanisms for this. Static and dynamic lock guardian.
 
 There are just 4 parameters to tune the lock.You can configure them by using properties or builder. Please see the [runner configuration](standalone.md#configuration) section for more information.
 
+* **lockAcquiredForMinutes**: Indicates how long the lock will be hold in minutes once acquired. You can configure it with method setLockConfig in builder.
+* **maxWaitingForLockMinutes**: Indicates max time in minutes to wait for the lock in each try.You can configure it with method setLockConfig in builder.
+* **maxTries**: Number of times Mongock will try to acquire the lock. You can configure it with method setLockConfig in builder.
+* **throwExceptionIfCannotObtainLock**: Mongock will throw MongockException if lock can not be obtained. You can configure it with method setLockConfig in builder.
 
+{% hint style="warning" %}
+When using the builder method **setLockConfig**, which takes lockAcquiredForMinutes, maxWaitingForLockMinutes and maxTries as parameters, **will implicitly set throwExceptionIfCannotObtainLock to true.** 
+
+However, in common scenarios it doesn't makes much sense, but you can set it to false afterwards with method throwExceptionIfCannotObtainLock though.
+{% endhint %}
 
