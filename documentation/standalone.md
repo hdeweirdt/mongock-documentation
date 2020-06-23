@@ -37,9 +37,14 @@ However, if you opt for the manual builder approach, you need to build the runne
 
 #### Configuration
 
-* all the configuration parameters
-
-
+| Configuration parameter | Default value | Type | Description | LInk |
+| :--- | :--- | :--- | :--- | :--- |
+| changeLogScanPackage | mandatory. At least one. | List&lt;String&gt; | Instructs Mongock where to find the changeLog classes.  |  |
+| metadata | null | Map&lt;String, Object&gt; | Custom data attached to the migration. It will added to all changes in changeLog collection |  |
+| startSystemVersion | "0" | String | System version to start with |  |
+| endSystemVersions | MAX\_VALUE | String | System version to end with. |  |
+| throwExceptionIfCannot.... | true | boolean | Mongock will throw MongockException if lock can not be obtained |  |
+| legacyMigration | null | Object | Configuration related to migrate from legacy systems. |  |
 
 {% tabs %}
 {% tab title="properties" %}
