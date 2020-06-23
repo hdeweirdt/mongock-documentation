@@ -40,7 +40,7 @@ However, if you opt for the manual builder approach, you need to build the runne
 | Configuration parameter | Default value | Type | Description | Link |
 | :--- | :--- | :--- | :--- | :--- |
 | changeLogScanPackage | mandatory. At least one. | List&lt;String&gt; | Instructs Mongock where to find the changeLog classes.  | [link](untitled.md) |
-| springContext | mandatory for Spring | ApplicationContext | Sets the spring Application context for bean injections into ChangeSet methods. It's where the custom beans, MongoTemplate, profiles, etc. is take from. |  |
+| springContext | mandatory for Spring | ApplicationContext | Sets the spring Application context for bean injections into ChangeSet methods. It's where the custom beans, MongoTemplate, profiles, etc. is take from. | [link](further-configuration.md#spring-context) |
 | metadata | null | Map&lt;String, Object&gt; | Custom data attached to the migration. It will added to all changes in changeLog collection | [link](further-configuration.md#metadata) |
 | startSystemVersion | "0" | String | System version to start with | [link](further-configuration.md#systemversion) |
 | endSystemVersions | MAX\_VALUE | String | System version to end with. | [link](further-configuration.md#systemversion) |
@@ -49,6 +49,8 @@ However, if you opt for the manual builder approach, you need to build the runne
 | maxTries | 3 | int | Number of times Mongock will try to acquire the lock. Builder method **setLockConfig** | [link](lock-1.md) |
 | throwExceptionIfCannot.... | true | boolean | Mongock will throw MongockException if lock can not be obtained. Builder method **setLockConfig** | [link](lock-1.md) |
 | legacyMigration | null | Object | Configuration related to migrate from legacy systems. | [link](legacy-migration.md) |
+| trackIgnored | false | boolean | Specifies if ignored changeSets\(already executed, etc.\) should be track in the changeLog collection with **IGNORED** status | [link](further-configuration.md#trackignored) |
+| enabled | true | boolean | If false, will disable Mongock execution | [link](further-configuration.md#enable) |
 
 {% tabs %}
 {% tab title="properties" %}
@@ -75,21 +77,50 @@ spring:
         timestamp: legacyTimestampField
         change-log-class: legacyChangeLogClassField
         change-set-method: legacyChangeSetMethodField
+    track-ignored: true
+    enabled: true
 ```
 {% endtab %}
 
 {% tab title="mongock-spring-v5" %}
 ```java
-MongoCore3Driver driver = new MongoCore3Driver(mongoDatabase);
-driver.setChangeLogCollectionName("newChangeLogCollectionName");
-driver.setLockCollectionName("newLockCollectionName");
-driver.setLockSettings(3, 4, 3);
+builder
+    .addChangeLogsScanPackage("com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.initializer")
+    .addChangeLogsScanPackage("com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.updater")
+    .setSpringContext(springContext)
+    .withMetadata(
+        new HashMap(){{
+          put("change-motivation", "Missing field in collection");
+          put("decided-by", "Tom Waugh");
+      }})
+    .setStartSystemVersion("1.3")
+    .setEndSystemVersion("6.4")
+    .setLockConfig(10,4,5)
+    .setLegacyMigration(new MongockLegacyMigration(
+        "mongobeeChangeLogCollection", true, "legacyChangeIdField", "legacyAuthorField", "legacyTimestampField", "legacyChangeLogClassField", "legacyChangeSetMethodField"))
+    .setTrackIgnored(true)
+    .setEnabled(true)
+
 ```
 {% endtab %}
 
 {% tab title="standalone" %}
-```
-
+```java
+builder
+    .addChangeLogsScanPackage("com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.initializer")
+    .addChangeLogsScanPackage("com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.updater")
+    .withMetadata(
+        new HashMap(){{
+          put("change-motivation", "Missing field in collection");
+          put("decided-by", "Tom Waugh");
+      }})
+    .setStartSystemVersion("1.3")
+    .setEndSystemVersion("6.4")
+    .setLockConfig(10,4,5)
+    .setLegacyMigration(new MongockLegacyMigration(
+        "mongobeeChangeLogCollection", true, "legacyChangeIdField", "legacyAuthorField", "legacyTimestampField", "legacyChangeLogClassField", "legacyChangeSetMethodField"))
+    .setTrackIgnored(true)
+    .setEnabled(true)
 ```
 {% endtab %}
 {% endtabs %}
