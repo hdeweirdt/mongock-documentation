@@ -25,18 +25,18 @@ public class ClientInitializer {
 
 As explained in [lock section](lock-1.md#how-is-the-lock-ensured-in-every-database-access), custom beans are proxied to ensure  the database is accessed in a  synchronised manner using the lock. 
 
-In general, the proxy will have two goals:
+The Mongock's proxy instrumentation have two main goals:
 
-1. Intercept the actual method you are calling
-2. Return a proxied object 
+1. Intercept the actual method you are calling to ensure the lock is acquired.
+2. Return a proxied object  to ensure the lock is acquired in subsequent calls
 
 {% hint style="info" %}
-By default Mongock won't return a proxied object if one of the following conditions is in place:  The returned object is not an interface or it's a primitive type, String, Class type, wrapper type or any object in a package starting with "java.", "com.sun.", "javax.", "jdk.internal." or "sun."
+By default, Mongock won't return a proxied object if one of the following conditions is in place:  The returned object is not an interface or it's a primitive type, String, Class type, wrapper type or any object in a package prefixed by"java.", "com.sun.", "javax.", "jdk.internal." or "sun."
 {% endhint %}
 
 ## Advance configuration: Prevent proxing my beans
 
-Although most cases will be fine with the default Mongock's proxy mechanism and it is highly recommended, sometimes you need a different behaviour. Luckily in Mongock almost everything is configurable and something as sensitive as proxies won't be an exception.
+Although it is conservative, the default Mongock's proxy behaviour it's the recommend option and most cases will be fine with it. However, sometimes you need a different behaviour. Luckily in Mongock almost everything is configurable and something as sensitive as proxies won't be an exception.
 
 You can prevent proxing custom beans by using **@NonLockGuarded** annotation. You can apply it to your bean's type, a specific method or a changeSet parameter. 
 
