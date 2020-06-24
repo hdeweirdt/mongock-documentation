@@ -36,9 +36,9 @@ By default, Mongock won't return a proxied object if one of the following condit
 
 ## Advance configuration: Prevent proxing my beans
 
-Although it is a conservative approach, the default Mongock's proxy behaviour it's the recommended option and most cases will be fine with it. It's the easiest and most convenient way whilemy key "" the performance shouldn't be notoriously degraded. 
+Although it is a conservative approach, the default Mongock's proxy behaviour it's the recommended option and most cases will be fine with it. It is a convenient way which provides a good balance between easiness and performance. 
 
-However, sometimes you need a different behaviour. Luckily in Mongock almost everything is configurable and something as sensitive as proxies won't be an exception.
+However, sometimes you need a tune this. Luckily in Mongock almost everything is configurable and something as sensitive as a proxy won't be an exception.
 
 You can prevent proxing custom beans by using **@NonLockGuarded** annotation. You can apply it to your bean's type, a specific method or a changeSet parameter. 
 
