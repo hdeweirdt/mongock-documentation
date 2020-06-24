@@ -1,6 +1,6 @@
 # Quick start
 
-Setting up Mongock consists in few main steps, which will be explain briefly in this section and more detailed in the rest of the documentation:
+Mongock is set up in a few steps, which will be explained briefly in this section and more detailed in the rest of the documentation:
 
 1. **Importing artifact dependencies\(maven, gradle, etc.\)**
    1. _Mongock's bom_
