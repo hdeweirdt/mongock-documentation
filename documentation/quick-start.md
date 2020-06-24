@@ -12,7 +12,7 @@ Mongock is set up in a few steps, which will be explained briefly in this sectio
 All the steps in group 1\(importing artifact dependencies\)  are common independently of the approach you use\(annotation or builder\).
 
 {% hint style="success" %}
-These are the unique steps you need to run Mongock. The rest of the documentation is about explaining and how to extend  the "configuration step" to use/tune the different features.
+These are the unique steps you need to run Mongock. The rest of the documentation is about explaining them and how to extend  the "configuration step" to use/tune the different features.
 {% endhint %}
 
 ## Importing artifact dependencies 
