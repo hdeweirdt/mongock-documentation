@@ -8,7 +8,7 @@
   * [Driver](documentation/spring.md)
   * [Runner](documentation/standalone.md)
   * [Lock](documentation/lock-1.md)
-  * [Injecting custom beans](documentation/injecting-custom-dependencies-to-changesets.md)
+  * [Using custom beans in changeSet methods](documentation/injecting-custom-dependencies-to-changesets.md)
   * [Spring specific](documentation/spring-profiles.md)
   * [Further configuration](documentation/further-configuration.md)
   * [Legacy migration](documentation/legacy-migration.md)

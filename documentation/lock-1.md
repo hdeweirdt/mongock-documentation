@@ -22,7 +22,7 @@ Mongock uses two mechanisms for this. Static and dynamic lock guardian.
 **MongockTemplate** must be used instead of MongoTemplate.
 {% endhint %}
 
-* **dynamic lock guardian**: This used for the custom objects used in changeSet methods, like repositories, etc. This implementation uses the JDK dynamic proxy instrumentation. While it has its pros and cons, it provides a fair balance between performance and framework intrusion. Unfortunately, one of the well known  limitations is that only interfaces can be proxied, so for this reason Mongock only allows interface for custom beans in changeSet methods. Please consult [Injecting custom beans](injecting-custom-dependencies-to-changesets.md) for more information.
+* **dynamic lock guardian**: This used for the **custom objects** used in changeSet methods, like repositories, etc. This implementation uses the JDK dynamic proxy instrumentation. While it has its pros and cons, it provides a fair balance between performance and framework intrusion. Unfortunately, one of the well known  limitations is that only interfaces can be proxied, so for this reason Mongock only allows interface for custom beans in changeSet methods. Please consult [Injecting custom beans](injecting-custom-dependencies-to-changesets.md) for more information.
 
 {% hint style="warning" %}
 **Custom beans** in changeSet methods **must be interfaces**.
