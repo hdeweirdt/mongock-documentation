@@ -1,22 +1,25 @@
 # Quick start
 
-## Instantiation approaches: Annotation vs builder
+Setting up Mongock consists in few main steps, which will be explain briefly in this section and more detailed in the rest of the documentation:
 
-As discussed, Mongock provides two approaches: Annotation approach and builder approach.
+1. **Importing artifact dependencies\(maven, gradle, etc.\)**
+   1. _Mongock's bom_
+   2. _Mongock's runner_
+   3. _Mongock's driver_
+   4. _MongoDB driver or specific underlying  library_
+2. **Configure and run Mongock: Annotation approach or traditional builder approach**
 
-**@EnableMongock** provides a more Spring friendly and easier approach, while you don't miss any configuration property. However, there are some scenarios where the traditional builder approach is more convenient. For example if you need more control over the bean creation or when you are not using Spring at all.
+All the steps in group 1\(importing artifact dependencies\)  are common independently of the approach you use\(annotation or builder\).
 
-In this section you will see a quick introduction on how to start with both approaches easily. 
-
-{% hint style="info" %}
-These are the unique steps you need to run Mongock. The rest of the documentation is about enhancing  the "configuration step" to use/tune the different features.
+{% hint style="success" %}
+These are the unique steps you need to run Mongock. The rest of the documentation is about explaining and how to extend  the "configuration step" to use/tune the different features.
 {% endhint %}
 
-## Common steps
+## Importing artifact dependencies 
 
 Both approaches share the first 4 steps. All of them related to your pom file.
 
-1- **Add the last version of Mongock bom to your pom file**
+1- **Import the last version of Mongock's bom to your pom file**
 
 ```markup
 <dependencyManagement>
@@ -32,7 +35,7 @@ Both approaches share the first 4 steps. All of them related to your pom file.
 </dependencyManagement>
 ```
 
-2- **Add runner dependency.** For more information, check the [runner compatibility table](standalone.md#runners-types-and-compatibility-table).
+2- **Import runner dependency.** For more information, check the [runner compatibility table](standalone.md#runners-types-and-compatibility-table).
 
 {% tabs %}
 {% tab title="Spring 5" %}
@@ -54,7 +57,7 @@ Both approaches share the first 4 steps. All of them related to your pom file.
 {% endtab %}
 {% endtabs %}
 
-3- **Add driver dependency.** For more information, check the [driver compatibility table](spring.md#driver-types-and-compatibility-table).
+3- **Import driver dependency.** For more information, check the [driver compatibility table](spring.md#driver-types-and-compatibility-table).
 
 {% tabs %}
 {% tab title="Spring data 3" %}
@@ -94,7 +97,7 @@ Both approaches share the first 4 steps. All of them related to your pom file.
 {% endtab %}
 {% endtabs %}
 
-3-  **Add your MongoDB and Spring Data dependencies**. In order to avoid transitive dependency issues, Mongock doesn't import any MongoDB or Spring Data library. So you need to provide them. For more information, check the [driver compatibility table](spring.md#driver-types-and-compatibility-table).
+3-  **Import your MongoDB and Spring Data dependencies**. In order to avoid transitive dependency issues, Mongock doesn't import any MongoDB or Spring Data library. So you need to provide them. For more information, check the [driver compatibility table](spring.md#driver-types-and-compatibility-table).
 
 {% tabs %}
 {% tab title="Spring data 3" %}
@@ -148,13 +151,15 @@ Both approaches share the first 4 steps. All of them related to your pom file.
 {% endtab %}
 {% endtabs %}
 
-## Building and running Mongock
+## Building and running Mongock: Annotation vs Builder
 
-Once you have successfully imported the necessary dependencies, there are two ways you can build and run Mongock. In most cases, when using Spring framework, the most easy and convenient way is the **annotation approach**. However, sometimes you are not using Spring or you need more control over your Mongock bean. In that case you should opt for the **traditional builder approach**.
+Once you have successfully imported the necessary dependencies, as we briefly explained in [Main concepts](main-concepts.md#builder), there are two ways you can build and run Mongock. In most cases, when using Spring framework, the most easy and convenient way is the annotation approach. However, sometimes you are not using Spring or you need more control over your Mongock bean. In that case you should opt for the traditional builder approach.
 
 ### Annotation approach
 
-With the annotation approach you only need to  specify your changeLog package, as minimal configuration, and tell Spring your are using Mongock. For this you only need the 2 following steps:
+When opting for annotation approach, all your configuration will be set in your properties file. However, for minimal configuration you only need to  specify a changeLog package,  the rest of the configuration will use default values.
+
+Then, you only need to tell Spring to use Mongock by annotating your Spring boot application with  **@EnableMongock** annotation 
 
 1- **Add your changeLog package path to your property file**. Minimal configuration requires at least one changeLog package\(it's an array, so you can add more than one\), but anything you can configure manually with the builder, you can do it as well with properties. However note that Mongock provides default values. Worthy noticing the lock, which is now enabled by default, unlike older versions where you need to explicitly enable it, due to backward compatibility.
 
