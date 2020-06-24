@@ -4,7 +4,7 @@ This page explains all the essential concepts you will need to know to understan
 
 ## Mongock structure
 
-Mongock, as [Changock](../#what-is-changock) specialisation for MongoDB,  consists in 3 main type of objects: ChangeLogs, driver and runner. Builders are simple used to configure and build these 3 components.
+Mongock, as [Changock](../#what-is-changock) specialisation for MongoDB,  consists in 3 main type of objects: ChangeLogs, driver and runner. Builders are simply used to configure and build these 3 components.
 
 ## ChangeLogs
 
