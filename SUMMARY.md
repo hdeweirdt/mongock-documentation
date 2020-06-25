@@ -9,7 +9,7 @@
   * [Runner](documentation/standalone.md)
   * [Lock](documentation/lock-1.md)
   * [Using custom beans in changeSet methods](documentation/injecting-custom-dependencies-to-changesets.md)
-  * [Spring specific](documentation/spring-profiles.md)
+  * [Spring specific features](documentation/spring-profiles.md)
   * [Further configuration](documentation/further-configuration.md)
   * [Legacy migration](documentation/legacy-migration.md)
   * [Transactions](documentation/transactions.md)
