@@ -55,7 +55,7 @@ Mongock will support in next versions the new Profile expression approach from S
 
 When using Spring runner, you choose what type of bean you want to build; Spring [ApplicationRunner](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/ApplicationRunner.html) bean or a [InitializingBean](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/InitializingBean.html). 
 
-With annotation approach:
+**With annotation approach:**
 
 {% tabs %}
 {% tab title="ApplicationRunner" %}
@@ -74,6 +74,28 @@ spring:
     change-logs-scan-package:
       - com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.initializer
     runner-type: initializingbean
+```
+{% endtab %}
+{% endtabs %}
+
+**With traditional builder approach:**
+
+{% tabs %}
+{% tab title="ApplicationRunner" %}
+```java
+MongockSpring5.builder().
+    .addChangeLogsScanPackage("com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.initializer")
+    //...
+    .buildApplicationRunner();
+```
+{% endtab %}
+
+{% tab title="InitializingBean" %}
+```java
+MongockSpring5.builder().
+    .addChangeLogsScanPackage("com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.initializer")
+    //...
+    .buildInitializingBeanRunner();
 ```
 {% endtab %}
 {% endtabs %}
