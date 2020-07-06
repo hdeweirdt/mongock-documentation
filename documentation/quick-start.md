@@ -194,7 +194,7 @@ In this case you need to build the Mongock Instance yourself and , in case of Sp
 public MongockApplicationRunner mongockApplicationRunner(ApplicationContext springContext,
                                                          MongoTemplate mongoTemplate) {
     return MongockSpring5.builder()
-        .setDriver(new SpringDataMongo3Driver(mongoTemplate))
+        .setDriver(SpringDataMongo3Driver.withDefaultLock(mongoTemplate))
         .addChangeLogsScanPackage("your_changeLog_package_path")
         .setSpringContext(springContext)
         .buildApplicationRunner();
@@ -207,7 +207,7 @@ public MongockApplicationRunner mongockApplicationRunner(ApplicationContext spri
 public MongockApplicationRunner mongockApplicationRunner(ApplicationContext springContext,
                                                          MongoTemplate mongoTemplate) {
     return MongockSpring5.builder()
-        .setDriver(new SpringDataMongo3Driver(mongoTemplate))
+        .setDriver(SpringDataMongo3Driver.withDefaultLock(mongoTemplate))
         .addChangeLogsScanPackage("your_changeLog_package_path")
         .setSpringContext(springContext)
         .buildInitializingBeanRunner();
@@ -220,7 +220,7 @@ public MongockApplicationRunner mongockApplicationRunner(ApplicationContext spri
 ```java
 MongoClient mongoClient = MongoClients.create("MongoDB connection string");
 MongockStandalone.builder()
-        .setDriver(new MongoSync4Driver(mongoCient.getDatabase("your_db"))
+        .setDriver(MongoSync4Driver.withDefaultLock(mongoCient.getDatabase("your_db"))
         .addChangeLogsScanPackage("your_changeLog_package_path")
         .buildRunner()
 ```
