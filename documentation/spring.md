@@ -185,37 +185,38 @@ spring:
 
 {% tab title="v3-driver" %}
 ```java
-MongoCore3Driver driver = new MongoCore3Driver(mongoDatabase);
+MongoCore3Driver driver = MongoCore3Driver.withDefaultLock(mongoDatabase)
+//or .withLockSetting(mongoDatabase, lockAcquiredForMinutes, maxWaitingForLockMinutes, maxTries);
 driver.setChangeLogCollectionName("newChangeLogCollectionName");
 driver.setLockCollectionName("newLockCollectionName");
-driver.setLockSettings(3, 4, 3);
 ```
 {% endtab %}
 
 {% tab title="sync-v4-driver" %}
 ```java
-MongoCore3Driver driver = new MongoSync4Driver(mongoDatabase);
+MongoSync4Driver driver = MongoSync4Driver.withDefaultLock(mongoDatabase)
+//or .withLockSetting(mongoDatabase, lockAcquiredForMinutes, maxWaitingForLockMinutes, maxTries);
 driver.setChangeLogCollectionName("newChangeLogCollectionName");
 driver.setLockCollectionName("newLockCollectionName");
-driver.setLockSettings(3, 4, 3);
+
 ```
 {% endtab %}
 
 {% tab title="springdata-v2-driver" %}
 ```java
-MongoCore3Driver driver = new SpringDataMongo2Driver(mongoTemplate);
+SpringDataMongo2Driver driver = SpringDataMongo2Driver.withDefaultLock(mongoTemplate)
+//or .withLockSetting(mongoTemplate, lockAcquiredForMinutes, maxWaitingForLockMinutes, maxTries);
 driver.setChangeLogCollectionName("newChangeLogCollectionName");
 driver.setLockCollectionName("newLockCollectionName");
-driver.setLockSettings(3, 4, 3);
 ```
 {% endtab %}
 
 {% tab title="springdata-v3-driver" %}
 ```java
-MongoCore3Driver driver = new SpringDataMongo3Driver(mongoTemplate);
+SpringDataMongo3Driver driver = SpringDataMongo3Driver.withDefaultLock(mongoTemplate)
+//or .withLockSetting(mongoTemplate, lockAcquiredForMinutes, maxWaitingForLockMinutes, maxTries);
 driver.setChangeLogCollectionName("newChangeLogCollectionName");
 driver.setLockCollectionName("newLockCollectionName");
-driver.setLockSettings(3, 4, 3);
 ```
 {% endtab %}
 {% endtabs %}
