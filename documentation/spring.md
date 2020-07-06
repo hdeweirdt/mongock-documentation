@@ -109,14 +109,6 @@ However, if you opt for the manual builder approach, you need to create the driv
 
 Driver configuration is very simple, but there are still a couple of properties you can configure related to the collections and lock parameters
 
-* **changeLogCollectionName**: It's the name of the collection where the changeLog history is stored
-* **lockCollectionName**: The name of the collection where the pessimistic lock is stored
-* **lockAcquiredForMinutes**: Number of minutes mongock will acquire the lock for. It will refresh the lock when is close to be expired anyway.
-* **maxWaitingForLockMinutes**: Max minutes mongock will wait for the lock in every try.
-* **maxTries**: Max tries when the lock is held by another mongock instance.
-
-
-
 <table>
   <thead>
     <tr>
