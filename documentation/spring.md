@@ -115,6 +115,80 @@ Driver configuration is very simple, but there are still a couple of properties 
 * **maxWaitingForLockMinutes**: Max minutes mongock will wait for the lock in every try.
 * **maxTries**: Max tries when the lock is held by another mongock instance.
 
+
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Configuration parameter</th>
+      <th style="text-align:left">Default value</th>
+      <th style="text-align:left">Description</th>
+      <th style="text-align:left">Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        <p>&lt;b&gt;&lt;/b&gt;</p>
+        <p><b>changeLogCollectionName</b>
+        </p>
+      </td>
+      <td style="text-align:left">mongockChangeLock</td>
+      <td style="text-align:left">
+        <p></p>
+        <p>It&apos;s the name of the collection where the changeLog history is stored</p>
+      </td>
+      <td style="text-align:left"><a href="untitled.md">link</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>lockCollectionName</b>
+      </td>
+      <td style="text-align:left">mongockLock</td>
+      <td style="text-align:left">
+        <p></p>
+        <p>The name of the collection where the pessimistic lock is stored</p>
+      </td>
+      <td style="text-align:left"><a href="further-configuration.md#spring-context">link</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>LockAcquiredForMinutes</b>
+      </td>
+      <td style="text-align:left">3</td>
+      <td style="text-align:left">
+        <p></p>
+        <p>Number of minutes mongock will acquire the lock for. It will refresh the
+          lock when is close to be expired anyway</p>
+      </td>
+      <td style="text-align:left"><a href="lock-1.md">link</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>maxWaitingForLockMinutes</b>
+      </td>
+      <td style="text-align:left">4</td>
+      <td style="text-align:left">
+        <p></p>
+        <p>Max minutes mongock will wait for the lock in every try</p>
+      </td>
+      <td style="text-align:left"><a href="lock-1.md">link</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>maxTries</b>
+      </td>
+      <td style="text-align:left">3</td>
+      <td style="text-align:left">
+        <p></p>
+        <p>Max tries when the lock is held by another mongock instance</p>
+      </td>
+      <td style="text-align:left"><a href="lock-1.md">link</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 {% tabs %}
 {% tab title="properties" %}
 ```yaml
