@@ -27,6 +27,4 @@ There are several good reasons to use Mongock in your project. Here we give you 
 * Link to FAQ page
 * Who uses Mongock
 * etc
-* etc2
-* etc3
-* 
+
