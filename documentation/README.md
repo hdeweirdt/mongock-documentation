@@ -1,18 +1,8 @@
 # Documentation
 
-{% page-ref page="main-concepts.md" %}
+{% hint style="info" %}
+Please notice this documentation is still under development. Although we will be adding more content and improving it, it's covering all the basics for you to use Mongock in your project.
+{% endhint %}
 
-{% page-ref page="quick-start.md" %}
-
-{% page-ref page="untitled.md" %}
-
-{% page-ref page="spring.md" %}
-
-{% page-ref page="standalone.md" %}
-
-{% page-ref page="lock-1.md" %}
-
-{% page-ref page="injecting-custom-dependencies-to-changesets.md" %}
-
-
+Please, if there is anything you think we are missing, please don't hesitate to let us by [email](mailto:dev@cloudyrock.io)
 
