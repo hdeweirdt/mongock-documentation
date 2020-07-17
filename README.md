@@ -22,9 +22,5 @@ There are several good reasons to use Mongock in your project. Here we give you 
 * Provides great integration for [Spring](https://spring.io/), allowing you to inject any custom dependency you want to your changeLog method and still been synchronised
 * We walk with you to production. Get more information about our support model at [dev@cloudyrock.io](mailto:dev@cloudyrock.io)
 
-## What's else?
 
-* Link to FAQ page
-* Who uses Mongock
-* etc
 
