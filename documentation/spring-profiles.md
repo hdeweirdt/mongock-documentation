@@ -48,7 +48,7 @@ public class changeLogForTestOnly{
 ```
 
 {% hint style="info" %}
-Mongock will support in next versions the new Profile expression approach from Spring. Please check our [roadmap](../resources/product-roadmap.md)
+Mongock will support in next versions the new Profile expression approach from Spring. Please check our [roadmap]()
 {% endhint %}
 
 ## ApplicationRunner vs InitializingBean

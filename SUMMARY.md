@@ -13,28 +13,5 @@
   * [Further configuration](documentation/further-configuration.md)
   * [Legacy migration](documentation/legacy-migration.md)
   * [Transactions](documentation/transactions.md)
-  * [Recovery](documentation/recovery.md)
-  * [Undo](documentation/undo.md)
   * [Validations](documentation/validations.md)
-  * [Preconditions](documentation/preconditions.md)
-  * [Parallel Runners](documentation/parallel-runners.md)
-  * [Best practices](documentation/best-practices.md)
-  * [Testing with Mongock](documentation/testing-with-mongock.md)
-* [Pricing](pricing/README.md)
-  * [Pricing table](pricing/pricing-table.md)
-  * [Pro Free trial](pricing/pro-free-trial.md)
-  * [Billing policy](pricing/billing-policy.md)
-
-## Resources
-
-* [Mongock Support Policy](resources/mongock-support-policy.md)
-* [FAQ](resources/faq.md)
-* [Who uses Mongock](resources/who-uses-mongock.md)
-* [Testimonials](resources/testimonials.md)
-* [Product Structure](resources/product-structure.md)
-* [Product roadmap](resources/product-roadmap.md)
-* [Product changelog](resources/product-changelog.md)
-* [License](resources/license.md)
-* [Open source](resources/contributing.md)
-* [Other NoSql databases](resources/other-nosql-databases.md)
 

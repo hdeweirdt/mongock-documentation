@@ -10,7 +10,7 @@ Although this is completely configurable, the default, expected and recommended 
 
 #### What happens if the lock is acquired for a shorter period than the migration and cannot be re-acquired?
 
-This is very unlike as the only instance allowed to update the lock collection is the one in possession of the lock, but it's technically possible to experiment connection issues when refreshing the lock. When this happens, the lock is implicitly released\(or about to\) because it is expired, so  the current migration is aborted and any other Mongock instance can acquire it. The result of the migration will depend on wether the migration is [transactionable](transactions.md) or [provides recovery process](recovery.md). 
+This is very unlike as the only instance allowed to update the lock collection is the one in possession of the lock, but it's technically possible to experiment connection issues when refreshing the lock. When this happens, the lock is implicitly released\(or about to\) because it is expired, so  the current migration is aborted and any other Mongock instance can acquire it. The result of the migration will depend on wether the migration is [transactionable](transactions.md) or [provides recovery process](). 
 
 #### How is the lock ensured in every database access?
 

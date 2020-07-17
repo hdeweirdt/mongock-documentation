@@ -39,7 +39,7 @@ This is the Changock's driver concept taken to a lower level: MongoDB version, M
 MongockConnectionDriver driver = new SpringDataMongo3Driver(mongoTemplate);
 ```
 
-Although one of the main goals of this is to keep providing support for legacy drivers, while continue adding new drivers, once a new version\(for example sync-4-driver\) is added, the legacy one\(v3-driver\) will be still supported, but not evolved, meaning this that we won't provide any new feature for it, just bug fixes. However the level of support will depend on the type of Mongock edition you are using. Please take a look to [support policy](../resources/mongock-support-policy.md).
+Although one of the main goals of this is to keep providing support for legacy drivers, while continue adding new drivers, once a new version\(for example sync-4-driver\) is added, the legacy one\(v3-driver\) will be still supported, but not evolved, meaning this that we won't provide any new feature for it, just bug fixes. However the level of support will depend on the type of Mongock edition you are using. Please take a look to [support policy]().
 
 ## Runner
 
@@ -48,7 +48,7 @@ This is also the same Changock concept, just specialised for MongoDB. Runners ar
 * mongock-standalone
 * mongock-spring-v5
 
-As drivers, legacy versions of the same driver will be supported\(subscribed to the support policy applied\), but won't be enhanced. Please take a look to [support policy](../resources/mongock-support-policy.md).
+As drivers, legacy versions of the same driver will be supported\(subscribed to the support policy applied\), but won't be enhanced. Please take a look to [support policy]().
 
 ## Builder
 

@@ -13,7 +13,7 @@ When using Spring, you must use **MongockTemplate,** instead of Spring MongoTemp
 {% endhint %}
 
 {% hint style="info" %}
-Please take a look the [Best practices](best-practices.md) section for design decisions.  
+Please take a look the [Best practices]() section for design decisions.  
 {% endhint %}
 
 ## @ChangeLog
