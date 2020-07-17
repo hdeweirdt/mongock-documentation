@@ -1,7 +1,7 @@
 # What is Mongock
 
 {% hint style="info" %}
-Please notice this site is still under construction. Although we will be adding more content and improving it, it's covering all the basics for you to use Mongock in your project.
+This site is currently under construction. However is published to provide some basic guidance for the recently released version 4.1.3.BETA
 {% endhint %}
 
 Please, if there is anything you think we are missing, please don't hesitate to let us by [email](mailto:dev@cloudyrock.io)
