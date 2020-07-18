@@ -6,7 +6,7 @@ This site is currently under construction. However it has been published in orde
 The final version of this documentation is expected to be released on 3rd August 2020.
 {% endhint %}
 
-Please, if there is anything you think we are missing, please don't hesitate to let us by [email](mailto:dev@cloudyrock.io)
+Please, if there is anything you think we are missing, please don't hesitate to let us know by [email](mailto:dev@cloudyrock.io)
 
 ## What is Changock
 
