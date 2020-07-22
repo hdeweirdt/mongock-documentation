@@ -13,4 +13,6 @@
 * [Transactions](transactions.md)
 * [Validations](validations.md)
 * [Legacy migration](legacy-migration.md)
+* [Recovery](recovery.md)
+* [Undo](undo.md)
 
