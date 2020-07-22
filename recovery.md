@@ -1,4 +1,4 @@
-# Recovery
+# Recovery\(coming soon\)
 
 {% hint style="info" %}
 **Coming soon**
