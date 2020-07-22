@@ -10,7 +10,7 @@
 * [Using custom beans in changeSet methods](injecting-custom-dependencies-to-changesets.md)
 * [Spring specific features](spring-profiles.md)
 * [Further configuration](further-configuration.md)
-* [Legacy migration](legacy-migration.md)
 * [Transactions](transactions.md)
 * [Validations](validations.md)
+* [Legacy migration](legacy-migration.md)
 
