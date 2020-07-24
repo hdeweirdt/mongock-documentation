@@ -10,7 +10,7 @@ Before starting to work with MongoDB transactions you may want to check the [off
 
 In Mongock we see 3 transaction levels; per migration\(all-or-nothing\), per changeSet\(annotated method\) and per changeLog\(annotated class\). 
 
-Currently Mongock only provides support for all-or-nothing transactions, but we are working to provide the other two.
+Currently Mongock only provides support for all-or-nothing transactions, but we are working to provide the other two levels.
 
 #### Migration transaction
 
