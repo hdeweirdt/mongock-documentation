@@ -10,7 +10,7 @@
 * [Using custom beans in changeSet methods](injecting-custom-dependencies-to-changesets.md)
 * [Spring specific features](spring-profiles.md)
 * [Further configuration](further-configuration.md)
-* [Transactions\(coming soon\)](transactions.md)
+* [Transactions](transactions.md)
 * [Validations\(coming soon\)](validations.md)
 * [Recovery\(coming soon\)](recovery.md)
 * [Undo\(coming soon\)](undo.md)
