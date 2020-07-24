@@ -8,11 +8,11 @@ Before starting to work with MongoDB transactions you may want to check the [off
 
 ## Transactions levels
 
-In Mongock we see 3 transaction levels; per migration\(all-or-nothing\), per changeSet\(annotated method\) and per changeLog\(annotated class\). 
+In Mongock we see 3 transaction levels; per migration\(entire-migration\), per changeSet\(annotated method\) and per changeLog\(annotated class\). 
 
-Currently Mongock only provides support for all-or-nothing transactions, but we are working to provide the other two levels.
+Currently Mongock only provides support for entire-migration transactions, but we are working to provide the other two levels.
 
-#### Migration transaction
+#### Migration transaction\(entire-migration\)
 
 With this migration level Mongock will encapsulate all the unexecuted changes and will run them inside the same transactions. If any of them fails, the entire migration rollbacks and therefore Mongock's execution fails.
 
