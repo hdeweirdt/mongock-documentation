@@ -28,13 +28,15 @@ We recommend **migration transactions** for small migrations, for which you are 
 This feature is still not available
 {% endhint %}
 
-Opposite to **migration transactions**, there is changeSet transaction, the smallest level of Mongock transactions. This level will make Mongock to create a new transaction per changeSet. If a changeSet/transaction fails and assuming  it's [fail-fast](further-configuration.md#fail-fast), the committed transactions will stay but Mongock will rollback the failed transaction and won't execute the following ones. In case of a failed transactions is not fail-fast, Mongock will rollback it, but will carry on with the execution.
+Opposite to **migration transactions**, there is also changeSet transactions, the smallest level of Mongock transactions. This level will make Mongock to create a new transaction per changeSet. If a changeSet/transaction fails and assuming  it's [fail-fast](further-configuration.md#fail-fast), the committed transactions will stay but Mongock will rollback the failed transaction and won't execute the following ones. In case of a failed transactions is not fail-fast, Mongock will rollback it, but will carry on with the execution.
 
 ChangeSet migrations are good because of their granularity. You ensure a changeSet is not half-committed while you can progress over executions when unexpected failures happens.
 
 Also it solves  the issue with **migration transactions,** allowing you to commit small "chunks of migration".
 
-We recommend this level whenever encapsulating your "migration steps" fits in a method.
+However, the cons of this approach is that you will probably want to be flexible when committing your changes and not be restricted to changeSet.
+
+We recommend this level whenever you are confident that all your "migration steps" fit in methods.
 
 #### ChangeLog transaction
 
