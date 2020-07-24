@@ -14,9 +14,9 @@ Currently Mongock only provides support for entire-migration transactions, but w
 
 #### Migration transaction\(entire-migration\)
 
-With this migration level Mongock will encapsulate all the unexecuted changes and will run them inside the same transactions. If any of them fails, the entire migration rollbacks and therefore Mongock's execution fails.
+With this migration level Mongock will encapsulate all the unexecuted changes and will run them inside the same transaction. If there is any failure, the entire migration rollbacks and therefore Mongock's execution fails.
 
-This migration level is useful because you ensure you don't get any inconsistent data state. However this is a detriment to the migration control. Mongock will get all your changes in your migration, doesn't matter how big it is and will try to execute inside the transaction. 
+This migration level is useful because you ensure you don't get any inconsistent data state, but you don't have any control, Mongock just pick everything and wrap it in a transaction, doesn't matter how big the entire migration is. 
 
 You should also take into account MongoDB's limitations such as the maximum documents per transactions.
 
