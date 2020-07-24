@@ -20,7 +20,7 @@ This migration level is useful because you ensure you don't get any inconsistent
 
 You should also take into account MongoDB's limitations such as the maximum documents per transactions.
 
-We recommend **migration transactions** for small migrations, for which you are confident it will be executed in a single transaction with no problem.
+We recommend **migration transactions** for small migrations, for which you are confident they can be executed in a single transaction without problem.
 
 #### ChangeSet transaction
 
