@@ -1,6 +1,6 @@
 # Using custom beans in changeSet methods
 
-Mongock allows you to use  custom beans in your changeSet methods, so you are not restricted to use basic MongoDB\(or specific framework\) components, like MongoDatabase, MongoCollection, MongoTemplate, etc.\(actually you would be using their Mongock decorators, not the direct components\)
+Mongock allows you to use  custom beans in your changeSet methods, so you are not restricted to use basic MongoDB\(or specific framework\) components, like MongoDatabase, MongoCollection or MongoTemplate.\(actually you would be using their Mongock decorators, not the direct components\)
 
 {% hint style="info" %}
 **Custom beans must be interfaces**. The reason behind is explained in the [lock section](lock-1.md#how-is-the-lock-ensured-in-every-database-access)
