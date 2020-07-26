@@ -1,7 +1,7 @@
 # What is Mongock
 
 {% hint style="info" %}
-This site is currently under construction. However it has been published in order to provide a basic guidance for the recently released version 4.1.3.BETA.
+This site is currently under construction. However it has been published in order to provide a basic guidance for the recently released version 4.1.6.BETA.
 
 The final version of this documentation is expected to be released on 3rd August 2020.
 {% endhint %}
