@@ -175,6 +175,13 @@ Driver configuration is very simple, but there are still a couple of properties 
         and ChangeLogCollection.But it will still check they are created, so you
         must do it manually.</td>
     </tr>
+    <tr>
+      <td style="text-align:left"><b>disableTransaction</b>
+      </td>
+      <td style="text-align:left">false</td>
+      <td style="text-align:left">If true, Mongock won&apos;t use transactions to perform the migration.
+        Only available for builder approach, no properties.</td>
+    </tr>
   </tbody>
 </table>
 
@@ -234,4 +241,8 @@ driver.setIndexCreation(false);
 ```
 {% endtab %}
 {% endtabs %}
+
+## Transactions
+
+For transactions, please go to [Transactions](transactions.md) section.
 
