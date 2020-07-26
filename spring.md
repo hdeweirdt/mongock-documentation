@@ -167,6 +167,14 @@ Driver configuration is very simple, but there are still a couple of properties 
         <p>Max tries when the lock is held by another mongock instance</p>
       </td>
     </tr>
+    <tr>
+      <td style="text-align:left"><b>indexCreation</b>
+      </td>
+      <td style="text-align:left">true</td>
+      <td style="text-align:left">If false, Mongock won&apos;t create the required indexes for LockCollection
+        and ChangeLogCollection.But it will still check they are created, so you
+        must do it manually.</td>
+    </tr>
   </tbody>
 </table>
 
@@ -180,43 +188,49 @@ spring:
     lock-acquired-for-minutes: 3
     max-waiting-for-lock-minutes: 4
     max-tries: 3
+    index-creation: false
 ```
 {% endtab %}
 
 {% tab title="v3-driver" %}
 ```java
 MongoCore3Driver driver = MongoCore3Driver.withDefaultLock(mongoDatabase);
-//or .withLockSetting(mongoDatabase, lockAcquiredForMinutes, maxWaitingForLockMinutes, maxTries);
+//or .withLockSetting(mongoTemplate, acquiredForMinutes, maxWaitingFor, maxTries);
 driver.setChangeLogCollectionName("newChangeLogCollectionName");
 driver.setLockCollectionName("newLockCollectionName");
+driver.setIndexCreation(false);
 ```
 {% endtab %}
 
 {% tab title="sync-v4-driver" %}
 ```java
 MongoSync4Driver driver = MongoSync4Driver.withDefaultLock(mongoDatabase);
-//or .withLockSetting(mongoDatabase, lockAcquiredForMinutes, maxWaitingForLockMinutes, maxTries);
+//or .withLockSetting(mongoTemplate, acquiredForMinutes, maxWaitingFor, maxTries);
 driver.setChangeLogCollectionName("newChangeLogCollectionName");
 driver.setLockCollectionName("newLockCollectionName");
-
+driver.setIndexCreation(false);
 ```
 {% endtab %}
 
 {% tab title="springdata-v2-driver" %}
 ```java
-SpringDataMongo2Driver driver = SpringDataMongo2Driver.withDefaultLock(mongoTemplate);
-//or .withLockSetting(mongoTemplate, lockAcquiredForMinutes, maxWaitingForLockMinutes, maxTries);
+SpringDataMongo2Driver driver = SpringDataMongo2Driver
+.withDefaultLock(mongoTemplate);
+//or .withLockSetting(mongoTemplate, acquiredForMinutes, maxWaitingFor, maxTries);
 driver.setChangeLogCollectionName("newChangeLogCollectionName");
 driver.setLockCollectionName("newLockCollectionName");
+driver.setIndexCreation(false);
 ```
 {% endtab %}
 
 {% tab title="springdata-v3-driver" %}
 ```java
-SpringDataMongo3Driver driver = SpringDataMongo3Driver.withDefaultLock(mongoTemplate);
-//or .withLockSetting(mongoTemplate, lockAcquiredForMinutes, maxWaitingForLockMinutes, maxTries);
+SpringDataMongo3Driver driver = SpringDataMongo3Driver
+.withDefaultLock(mongoTemplate);
+//or .withLockSetting(mongoTemplate, acquiredForMinutes, maxWaitingFor, maxTries);
 driver.setChangeLogCollectionName("newChangeLogCollectionName");
 driver.setLockCollectionName("newLockCollectionName");
+driver.setIndexCreation(false);
 ```
 {% endtab %}
 {% endtabs %}
