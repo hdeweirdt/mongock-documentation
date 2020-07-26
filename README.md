@@ -8,7 +8,7 @@ The final version of this documentation is expected to be released on 3rd August
 
 Please, if there is anything you think we are missing, please don't hesitate to let us know by [email](mailto:dev@cloudyrock.io)
 
-## What is Changock
+## What is Mongock
 
 **Mongock** is a java MongoDB tool for tracking, managing and applying database schema changes across all your environments based on a coding approach.
 
