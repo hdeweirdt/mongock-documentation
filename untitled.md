@@ -108,10 +108,9 @@ When specifying versions you are able to upgrade to specific versions:
 {% tabs %}
 {% tab title="Properties" %}
 ```yaml
-spring:
-  mongock:
-    start-system-version: 1
-    end-system-version: 2.5.5
+mongock:
+  start-system-version: 1
+  end-system-version: 2.5.5
 ```
 {% endtab %}
 

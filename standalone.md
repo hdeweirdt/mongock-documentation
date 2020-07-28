@@ -56,30 +56,29 @@ When using the builder method **setLockConfig**, which takes lockAcquiredForMinu
 {% tabs %}
 {% tab title="properties" %}
 ```yaml
-spring:
-  mongock:
-    change-logs-scan-package:
-      - com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.initializer
-      - com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.updater
-    metadata:
-      change-motivation: Missing field in collection
-      decided-by: Tom Waugh
-    start-system-version: 1.3
-    end-system-version: 6.4
-    lock-acquired-for-minutes: 10
-    max-waiting-for-lock-minutes: 4
-    max-tries: 5
-    throw-exception-if-cannot-obtain-lock: true
-    legacy-migration:
-      collection-name: mongobeeChangeLogCollection
-      mapping-fields:
-        change-id: legacyChangeIdField
-        author: legacyAuthorField
-        timestamp: legacyTimestampField
-        change-log-class: legacyChangeLogClassField
-        change-set-method: legacyChangeSetMethodField
-    track-ignored: true
-    enabled: true
+mongock:
+  change-logs-scan-package:
+    - com.github.cloudyrock.mongock...changelogs.client.initializer
+    - com.github.cloudyrock.mongock...changelogs.client.updater
+  metadata:
+    change-motivation: Missing field in collection
+    decided-by: Tom Waugh
+  start-system-version: 1.3
+  end-system-version: 6.4
+  lock-acquired-for-minutes: 10
+  max-waiting-for-lock-minutes: 4
+  max-tries: 5
+  throw-exception-if-cannot-obtain-lock: true
+  legacy-migration:
+    collection-name: mongobeeChangeLogCollection
+    mapping-fields:
+      change-id: legacyChangeIdField
+      author: legacyAuthorField
+      timestamp: legacyTimestampField
+      change-log-class: legacyChangeLogClassField
+      change-set-method: legacyChangeSetMethodField
+  track-ignored: true
+  enabled: true
 ```
 {% endtab %}
 

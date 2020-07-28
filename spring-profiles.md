@@ -60,20 +60,19 @@ When using Spring runner, you choose what type of bean you want to build; Spring
 {% tabs %}
 {% tab title="ApplicationRunner" %}
 ```yaml
-  mongock:
-    change-logs-scan-package:
-      - com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.initializer
-    runner-type: applicationrunner
+mongock:
+  change-logs-scan-package:
+    - com.github.cloudyrock.mongock...changelogs.client.initializer
+  runner-type: applicationrunner
 ```
 {% endtab %}
 
 {% tab title="InitializingBean" %}
 ```yaml
-spring:
-  mongock:
-    change-logs-scan-package:
-      - com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.initializer
-    runner-type: initializingbean
+mongock:
+  change-logs-scan-package:
+    - com.github.cloudyrock.mongock...changelogs.client.initializer
+  runner-type: initializingbean
 ```
 {% endtab %}
 {% endtabs %}
@@ -84,7 +83,7 @@ spring:
 {% tab title="ApplicationRunner" %}
 ```java
 MongockSpring5.builder().
-    .addChangeLogsScanPackage("com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.initializer")
+    .addChangeLogsScanPackage("changelogs.package.path")
     //...
     .buildApplicationRunner();
 ```

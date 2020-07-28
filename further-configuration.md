@@ -9,13 +9,12 @@ You can specify your metadata like:
 {% tabs %}
 {% tab title="properties" %}
 ```yaml
-spring:
-  mongock:
-    change-logs-scan-package:
-      - com.github.cloudyrock.mongock.client.initializer
-    metadata:
-      change-motivation: Missing field in collection
-      decided-by: Tom Waugh
+mongock:
+  change-logs-scan-package:
+    - com.github.cloudyrock.mongock.client.initializer
+  metadata:
+    change-motivation: Missing field in collection
+    decided-by: Tom Waugh
     
 ```
 {% endtab %}
@@ -124,12 +123,11 @@ By specifying versions you are able to upgrade to specific versions:
 {% tabs %}
 {% tab title="properties" %}
 ```yaml
-spring:
-  mongock:
-    change-logs-scan-package:
-      - com.github.cloudyrock.mongock.client.initializer
-    start-system-version: 1
-    end-system-version: 2.5.5
+mongock:
+  change-logs-scan-package:
+    - com.github.cloudyrock.mongock.client.initializer
+  start-system-version: 1
+  end-system-version: 2.5.5
     
 ```
 {% endtab %}
@@ -187,11 +185,10 @@ Mongock will check all your changeSets in your changeLog packages and will run a
 {% tabs %}
 {% tab title="properties" %}
 ```yaml
-spring:
-  mongock:
-    change-logs-scan-package:
-      - com.github.cloudyrock.mongock.client.initializer
-    track-ignored: true
+mongock:
+  change-logs-scan-package:
+    - com.github.cloudyrock.mongock.client.initializer
+  track-ignored: true
     
 ```
 {% endtab %}
@@ -221,11 +218,10 @@ If for any reason you wanted to give Mongock a rest and disabled it, you can set
 {% tabs %}
 {% tab title="properties" %}
 ```yaml
-spring:
-  mongock:
-    change-logs-scan-package:
-      - com.github.cloudyrock.mongock.client.initializer
-    enabled: false
+mongock:
+  change-logs-scan-package:
+    - com.github.cloudyrock.mongock.client.initializer
+  enabled: false
     
 ```
 {% endtab %}

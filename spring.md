@@ -188,14 +188,13 @@ Driver configuration is very simple, but there are still a couple of properties 
 {% tabs %}
 {% tab title="properties" %}
 ```yaml
-spring:
-  mongock:
-    change-log-collection-name: newChangeLogCollectionName
-    lock-collection-name: newLockCollectionName
-    lock-acquired-for-minutes: 3
-    max-waiting-for-lock-minutes: 4
-    max-tries: 3
-    index-creation: false
+mongock:
+  change-log-collection-name: newChangeLogCollectionName
+  lock-collection-name: newLockCollectionName
+  lock-acquired-for-minutes: 3
+  max-waiting-for-lock-minutes: 4
+  max-tries: 3
+  index-creation: false
 ```
 {% endtab %}
 

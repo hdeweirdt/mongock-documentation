@@ -164,10 +164,9 @@ Then, you only need to tell Spring to use Mongock by annotating your Spring boot
 1- **Add your changeLog package path to your property file**. Minimal configuration requires at least one changeLog package\(it's an array, so you can add more than one\), but anything you can configure manually with the builder, you can do it as well with properties. However note that Mongock provides default values. Worthy noticing the lock, which is now enabled by default, unlike older versions where you need to explicitly enable it, due to backward compatibility.
 
 ```yaml
-spring:
-  mongock:
-    change-logs-scan-package:
-      - com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.initializer
+mongock:
+  change-logs-scan-package:
+    - com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.initializer
 ```
 
 2. **Annotate your SpringBootApplication with** _**@EnableMongock**_
@@ -191,8 +190,9 @@ In this case you need to build the Mongock Instance yourself and , in case of Sp
 {% tabs %}
 {% tab title="Spring ApplicationRunner" %}
 ```java
-public MongockApplicationRunner mongockApplicationRunner(ApplicationContext springContext,
-                                                         MongoTemplate mongoTemplate) {
+public MongockApplicationRunner mongockApplicationRunner(
+        ApplicationContext springContext,
+        MongoTemplate mongoTemplate) {
     return MongockSpring5.builder()
         .setDriver(SpringDataMongo3Driver.withDefaultLock(mongoTemplate))
         .addChangeLogsScanPackage("your_changeLog_package_path")
@@ -204,8 +204,9 @@ public MongockApplicationRunner mongockApplicationRunner(ApplicationContext spri
 
 {% tab title="Spring InitializingBean" %}
 ```java
-public MongockApplicationRunner mongockApplicationRunner(ApplicationContext springContext,
-                                                         MongoTemplate mongoTemplate) {
+public MongockApplicationRunner mongockApplicationRunner(
+        ApplicationContext springContext,
+        MongoTemplate mongoTemplate){
     return MongockSpring5.builder()
         .setDriver(SpringDataMongo3Driver.withDefaultLock(mongoTemplate))
         .addChangeLogsScanPackage("your_changeLog_package_path")
@@ -220,7 +221,7 @@ public MongockApplicationRunner mongockApplicationRunner(ApplicationContext spri
 ```java
 MongoClient mongoClient = MongoClients.create("MongoDB connection string");
 MongockStandalone.builder()
-        .setDriver(MongoSync4Driver.withDefaultLock(mongoCient.getDatabase("your_db"))
+        .setDriver(MongoSync4Driver.withDefaultLock(mongoCient.getDatabase("db"))
         .addChangeLogsScanPackage("your_changeLog_package_path")
         .buildRunner()
 ```
