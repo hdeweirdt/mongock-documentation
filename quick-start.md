@@ -15,6 +15,10 @@ All the steps in group 1\(importing artifact dependencies\)  are common independ
 These are the unique steps you need to run Mongock. The rest of the documentation is about explaining them and how to extend  the "configuration step" to use/tune the different features.
 {% endhint %}
 
+## Checking the last version
+
+The easiest and most trustable way to check the last Mongock's version is to visit the [artifact repository](https://oss.sonatype.org/#nexus-search;quick~mongock-bom)
+
 ## Importing artifact dependencies 
 
 Both approaches share the first 4 steps. All of them related to your pom file.
