@@ -21,7 +21,77 @@ public class ClientInitializer {
 }
 ```
 
-## Proxy explanation
+## How to use it
+
+### With Spring runner
+
+If you are using Spring Runner, you will be able to access to all of the beans present in the Spring context, just by adding the required bean in your changeSet as parameter.
+
+```java
+@ChangeLog(order = "1")
+public class ClientInitializerChangeLog {
+
+    @ChangeSet(id = "data-initializer", author = "mongock", order = "001")
+    public void ClientInitializer(ClientRepository clientRepository) {
+        List<Client> clients = IntStream.range(0, INITIAL_CLIENTS)
+                .mapToObj(i -> new Client(i))
+                .collect(Collectors.toList());
+        clientRepository.saveAll(clients);
+    }
+}
+```
+
+### With Standalone runner
+
+While you will still be using your custom bean by adding the parameter in your changeSet method as parameter, as the previous figure, when using the standalone runner you need to inject your custom bean manually at building time.
+
+You have 4 ways to add your bean\(or dependency\)
+
+#### Just the instance, inferencing the type
+
+Mongock will extract the type from the instance. 
+
+```java
+MongockStandalone.builder()
+        //..        
+        .addDependency(youBean)
+        .buildRunner()
+```
+
+#### Specifying the type
+
+The issue with the previous approach is, for example, when your bean implements an interface and you want your bean to be injected when any changeSet specify the interface as a parameter
+
+```java
+MongockStandalone.builder()
+        //..        
+        .addDependency(yourBeanInterface, youBean)
+        .buildRunner()
+```
+
+#### With name
+
+Sometimes, regardless of the type, you want the bean to be injected by a name. 
+
+```java
+MongockStandalone.builder()
+        //..        
+        .addDependency("myBean", youBean)
+        .buildRunner()
+```
+
+#### With name and type
+
+And there may be other times when you want everything, be able to reference your bean in your changeSets with a name and by type.
+
+```java
+MongockStandalone.builder()
+        //..        
+        .addDependency("myBean", yourBeanInterface, youBean)
+        .buildRunner()
+```
+
+## Advanced: Proxy explanation
 
 As explained in [lock section](lock-1.md#how-is-the-lock-ensured-in-every-database-access), custom beans are proxied to ensure  the database is accessed in a  synchronised manner using the lock. 
 
