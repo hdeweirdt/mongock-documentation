@@ -1,9 +1,7 @@
 # What is Mongock
 
 {% hint style="info" %}
-This site is currently under construction. However it has been published in order to provide a basic guidance for the recently released version.
-
-The final version of this documentation is expected to be released on 3rd August 2020.
+This documentation is still under development, so you can find some missing sections.
 {% endhint %}
 
 If there is anything you think we are missing, please don't hesitate to let us know by [email](mailto:dev@cloudyrock.io)
