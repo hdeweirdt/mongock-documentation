@@ -228,6 +228,8 @@ MongockStandalone.builder()
         .setDriver(MongoSync4Driver.withDefaultLock(mongoCient.getDatabase("db"))
         .addChangeLogsScanPackage("your_changeLog_package_path")
         .buildRunner()
+// when using standalone runner, you need to run it manually
+runner.execute();
 ```
 {% endtab %}
 {% endtabs %}

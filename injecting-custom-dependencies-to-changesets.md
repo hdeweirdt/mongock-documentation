@@ -56,6 +56,7 @@ MongockStandalone.builder()
         //..        
         .addDependency(youBean)
         .buildRunner()
+        .execute()
 ```
 
 #### Specifying the type
@@ -67,6 +68,7 @@ MongockStandalone.builder()
         //..        
         .addDependency(yourBeanInterface, youBean)
         .buildRunner()
+        .execute()
 ```
 
 #### With name
@@ -78,6 +80,7 @@ MongockStandalone.builder()
         //..        
         .addDependency("myBean", youBean)
         .buildRunner()
+        .execute()
 ```
 
 #### With name and type
@@ -89,6 +92,7 @@ MongockStandalone.builder()
         //..        
         .addDependency("myBean", yourBeanInterface, youBean)
         .buildRunner()
+        .execute()
 ```
 
 ## Advanced: Proxy explanation

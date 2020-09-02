@@ -50,6 +50,10 @@ This is also the same Changock concept, just specialised for MongoDB. Runners ar
 
 As drivers, legacy versions of the same driver will be supported\(subscribed to the support policy applied\), but won't be enhanced. Please take a look to [support policy]().
 
+{% hint style="info" %}
+When using MongockStandalone, once you have built the runner instance,  you need to run it manually with **`runner.execute()`**
+{% endhint %}
+
 ## Builder
 
 Once again, it's the same as the Changock concept: The mechanism to build a Mongock instance\(with the specific driver\) to process your migrations. 
@@ -79,10 +83,12 @@ MongockSpring5.builder()
 
 {% tab title="Standalone" %}
 ```java
-MongockStandalone.builder()
+MongockStandalone.Runner runner = MongockStandalone.builder()
         .setDriver(getDriver())
         .addChangeLogsScanPackage("changelogs_package_path")
         .buildRunner();
+// when using standalone runner, you need to run it manually
+runner.execute();
 ```
 {% endtab %}
 {% endtabs %}

@@ -121,6 +121,7 @@ builder
         "mongobeeChangeLogCollection", true, "legacyChangeIdField", "legacyAuthorField", "legacyTimestampField", "legacyChangeLogClassField", "legacyChangeSetMethodField"))
     .setTrackIgnored(true)
     .setEnabled(true)
+    .execute();
 ```
 {% endtab %}
 {% endtabs %}
