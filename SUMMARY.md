@@ -11,10 +11,10 @@
 * [Spring specific features](spring-profiles.md)
 * [Further configuration](further-configuration.md)
 * [Transactions](transactions.md)
+* [Reactive](reactive.md)
 * [Validations\(coming soon\)](validations.md)
 * [Recovery\(coming soon\)](recovery.md)
 * [Undo\(coming soon\)](undo.md)
 * [Legacy migration](legacy-migration.md)
 * [Best practices](best-practices.md)
-* [Reactive](reactive.md)
 
