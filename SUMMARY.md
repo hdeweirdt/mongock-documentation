@@ -16,4 +16,5 @@
 * [Undo\(coming soon\)](undo.md)
 * [Legacy migration](legacy-migration.md)
 * [Best practices](best-practices.md)
+* [Reactive](reactive.md)
 
