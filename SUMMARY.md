@@ -9,7 +9,7 @@
 * [Lock](lock-1.md)
 * [Using custom beans in changeSet methods](injecting-custom-dependencies-to-changesets.md)
 * [Spring specific features](spring-profiles.md)
-* [Further configuration](further-configuration.md)
+* [Advanced configuration](further-configuration.md)
 * [Transactions](transactions.md)
 * [Reactive](reactive.md)
 * [Validations\(coming soon\)](validations.md)
