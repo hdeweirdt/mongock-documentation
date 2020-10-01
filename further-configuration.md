@@ -186,8 +186,7 @@ Mongock will check all your changeSets in your changeLog packages and will run a
 {% tab title="properties" %}
 ```yaml
 mongock:
-  change-logs-scan-package:
-    - com.github.cloudyrock.mongock.client.initializer
+  #...
   track-ignored: true
     
 ```
@@ -219,9 +218,40 @@ If for any reason you wanted to give Mongock a rest and disabled it, you can set
 {% tab title="properties" %}
 ```yaml
 mongock:
-  change-logs-scan-package:
-    - com.github.cloudyrock.mongock.client.initializer
+  #...
   enabled: false
+    
+```
+{% endtab %}
+
+{% tab title="mongock-spring-v5" %}
+```java
+builder
+    .addChangeLogsScanPackage("com.github.cloudyrock.mongock.client.initializer")
+    .setSpringContext(springContext)
+    .setEnabled(true)
+```
+{% endtab %}
+
+{% tab title="standalone" %}
+```java
+builder
+    .addChangeLogsScanPackage("com.github.cloudyrock.mongock.client.initializer")
+    .setEnabled(true)
+```
+{% endtab %}
+{% endtabs %}
+
+## index-creation
+
+Sometimes you want to take the responsibility of creating the required indexes for LockCollection and ChangeLogCollection, rather than delegating it to Mongock\(default behaviour\). When that it's the case, you can relief Mongock from such responsibility by  setting  `index-creation` to false. However, Mongock will still check they are right, so you must ensure you get them right before Mongock bean is initialised.
+
+{% tabs %}
+{% tab title="properties" %}
+```yaml
+mongock:
+  #...
+  index-creation: false
     
 ```
 {% endtab %}
