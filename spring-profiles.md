@@ -2,7 +2,7 @@
 
 ## MongockTemplate
 
-As mentioned in  [ChangeLogs](untitled.md) section, when using Spring, you must use **MongockTemplate,** instead of Spring MongoTemplate. **MongockTemplate** is just a decorator/wrapper providing exactly the same API than MongoTemplate, but ensuring your changes are correctly synchronised. 
+As mentioned in  [ChangeLogs](changelogs.md) section, when using Spring, you must use **MongockTemplate,** instead of Spring MongoTemplate. **MongockTemplate** is just a decorator/wrapper providing exactly the same API than MongoTemplate, but ensuring your changes are correctly synchronised. 
 
 You can find the technical reason behind in the [Lock](lock-1.md) section. 
 

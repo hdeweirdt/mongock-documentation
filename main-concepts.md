@@ -8,7 +8,7 @@ Mongock, as [Changock](./#what-is-changock) specialisation for MongoDB,  consist
 
 ## ChangeLogs
 
-A Mongock executable process a set of **changeLogs**, which are the classes that will contain the actual migration. A **changeLog** consists in a bunch of methods called **changeSet**, which is a single task \(set of instructions made on a database\)**.** In other words a changeLog is a class annotated with `@ChangeLog` and containing methods annotated with `@ChangeSet.`ChangeLogs will be explained further in [Creating changeLogs](untitled.md)
+A Mongock executable process a set of **changeLogs**, which are the classes that will contain the actual migration. A **changeLog** consists in a bunch of methods called **changeSet**, which is a single task \(set of instructions made on a database\)**.** In other words a changeLog is a class annotated with `@ChangeLog` and containing methods annotated with `@ChangeSet.`ChangeLogs will be explained further in [Creating changeLogs](changelogs.md)
 
 We recommend to read our best practices for creating and designing changeLogs.
 

@@ -39,7 +39,7 @@ However, if you opt for the manual builder approach, you need to build the runne
 
 | Configuration parameter | Default value | Type | Description | Link |
 | :--- | :--- | :--- | :--- | :--- |
-| **changeLogScanPackage** | mandatory. At least one. | List&lt;String&gt; | Instructs Mongock where to find the changeLog classes.  | [link](untitled.md) |
+| **changeLogScanPackage** | mandatory. At least one. | List&lt;String&gt; | Instructs Mongock where to find the changeLog classes.  | [link](changelogs.md) |
 | **springContext** | mandatory for Spring | ApplicationContext | Sets the spring Application context for bean injections into ChangeSet methods. It's where the custom beans, MongoTemplate, profiles, etc. is take from. | [link](further-configuration.md#spring-context) |
 | **metadata** | null | Map&lt;String, Object&gt; | Custom data attached to the migration. It will added to all changes in changeLog collection | [link](further-configuration.md#metadata) |
 | **startSystemVersion** | "0" | String | System version to start with | [link](further-configuration.md#systemversion) |
