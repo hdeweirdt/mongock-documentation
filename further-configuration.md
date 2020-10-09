@@ -279,9 +279,7 @@ builder
 {% endtab %}
 {% endtabs %}
 
-And creating the indexes manually.
-
-For `mongockChangeLog`: 
+And creating the indexes manually. The `mongockChangeLog`indexes should look similar to the following
 
 ```javascript
 [
@@ -307,7 +305,7 @@ For `mongockChangeLog`:
 ]
 ```
 
-and for `mongockLock` :
+and the `mongockLock`indexes:
 
 ```javascript
 [
