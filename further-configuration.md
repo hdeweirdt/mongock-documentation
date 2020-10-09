@@ -244,7 +244,12 @@ builder
 
 ## index-creation
 
-Sometimes you want to take the responsibility of creating the required indexes for LockCollection and ChangeLogCollection, rather than delegating it to Mongock\(default behaviour\). When that it's the case, you can relief Mongock from such responsibility by  setting  `index-creation` to false. However, Mongock will still check they are right, so you must ensure you get them right before Mongock bean is initialised.
+Sometimes, for any reason, you don't want Mongock to perform administration tasks such as index creations, however they are mandatory and must be created. In this scenarios Mongock provides the possibility to allow you to create yourself the indexes manually by setting `index-creation` to false.   
+
+
+Please take into account that in this case, although Mongock won't create the indexes, will still check they are correctly created, so the indexes must be created prior to Mongock initialisation. Otherwise will throw an exception.
+
+As said, to achieve this you need two things. First telling Mongock to not create the indexes by: 
 
 {% tabs %}
 {% tab title="properties" %}
@@ -274,7 +279,55 @@ builder
 {% endtab %}
 {% endtabs %}
 
-## 
+And creating the indexes manually.
 
+For `mongockChangeLog`: 
 
+```javascript
+[
+	{
+		"v" : 2,
+		"key" : {
+			"_id" : 1
+		},
+		"name" : "_id_",
+		"ns" : "my-database.mongockChangeLog"
+	},
+	{
+		"v" : 2,
+		"unique" : true,
+		"key" : {
+			"executionId" : 1,
+			"author" : 1,
+			"changeId" : 1
+		},
+		"name" : "executionId_1_author_1_changeId_1",
+		"ns" : "my-database.mongockChangeLog"
+	}
+]
+```
+
+and for `mongockLock` :
+
+```javascript
+[
+	{
+		"v" : 2,
+		"key" : {
+			"_id" : 1
+		},
+		"name" : "_id_",
+		"ns" : "my-database.mongockLock"
+	},
+	{
+		"v" : 2,
+		"unique" : true,
+		"key" : {
+			"key" : 1
+		},
+		"name" : "key_1",
+		"ns" : "my-database.mongockLock"
+	}
+]
+```
 
