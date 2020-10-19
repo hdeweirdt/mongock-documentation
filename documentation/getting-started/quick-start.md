@@ -96,7 +96,7 @@ public MongockApplicationRunner mongockApplicationRunner(ApplicationContext spri
 
 {% tab title="Spring InitializingBean" %}
 ```java
-public MongockApplicationRunner mongockApplicationRunner(ApplicationContext springContext,
+public MongockInitializingBeanRunner mongockApplicationRunner(ApplicationContext springContext,
                                                          MongoTemplate mongoTemplate) {
     return MongockSpring5.builder()
         .setDriver(new SpringDataMongo3Driver(mongoTemplate))
