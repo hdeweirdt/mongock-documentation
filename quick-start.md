@@ -208,7 +208,7 @@ public MongockApplicationRunner mongockApplicationRunner(
 
 {% tab title="Spring InitializingBean" %}
 ```java
-public MongockApplicationRunner mongockApplicationRunner(
+public MongockInitializingBeanRunner mongockInitializingBeanRunner(
         ApplicationContext springContext,
         MongoTemplate mongoTemplate){
     return MongockSpring5.builder()
