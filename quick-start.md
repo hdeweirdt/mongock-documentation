@@ -55,7 +55,7 @@ Both approaches share the first 4 steps. All of them related to your pom file.
 ```markup
 <dependency>
     <groupId>com.github.cloudyrock.mongock</groupId>
-    <artifactId>>mongock-standalone</artifactId>
+    <artifactId>mongock-standalone</artifactId>
 </dependency>
 ```
 {% endtab %}
