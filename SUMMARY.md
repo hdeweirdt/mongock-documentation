@@ -16,4 +16,5 @@
 * [Recovery\(coming soon\)](recovery.md)
 * [Undo\(coming soon\)](undo.md)
 * [Legacy migration](legacy-migration.md)
+* [Releases](releases.md)
 
