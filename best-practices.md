@@ -1,6 +1,0 @@
-# Best practices
-
-## Migration design
-
-
-
