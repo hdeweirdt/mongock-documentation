@@ -12,6 +12,7 @@
 * [Advanced configuration](further-configuration.md)
 * [Transactions](transactions.md)
 * [Reactive](reactive.md)
+* [Events](events.md)
 * [Legacy migration](legacy-migration.md)
 * [Validations\(coming soon\)](validations.md)
 * [Recovery\(coming soon\)](recovery.md)
