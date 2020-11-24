@@ -1,16 +1,28 @@
 # Events
 
-#### **Since version 4.1.19**
+{% hint style="info" %}
+Feature in beta version
+{% endhint %}
+
+#### **Since version 4.2.1.BETA**
 
 The goal of Mongock events is to notify when the migration process has finished successfully or with errors, which would probably means the transaction was interrupted or not even started.  
   
 Depending on the type of Mongock runner you are using\(standalone or Spring\) you will configure it differently.
 
+## Type of Events
+
+Regardless the result, Mongock will notify when the process has ended. For this there are two events, one for success and the other for failure.
+
+### DbMigrationSuccessEvent
+
+This events is thrown when the migration has finished successfully.
+
 ## How to use it
 
 ### With spring runner
 
-If you are using spring you need...
+With Spring Mongock uses the buildup events framework provides by Spring. So there are two requirements for events to work with Mongock: Provide the Spring ApplicationEventPublisher and register the listener for the events you want to manage.
 
 ### With standalone
 
