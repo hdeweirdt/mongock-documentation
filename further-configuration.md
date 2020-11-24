@@ -244,7 +244,7 @@ builder
 
 ## index-creation
 
-Sometimes, for any reason, you don't want Mongock to perform administration tasks such as index creations, however they are mandatory and must be created. In this scenarios Mongock provides the possibility to allow you to create yourself the indexes manually by setting `index-creation` to false.   
+Sometimes, for some reasons, you don't want Mongock to perform administration tasks such as index creations. However they are mandatory and must be created. In this scenarios Mongock allows you to create  the indexes yourself manually by setting `index-creation` to false.   
 
 
 Please take into account that in this case, although Mongock won't create the indexes, will still check they are correctly created, so the indexes must be created prior to Mongock initialisation. Otherwise will throw an exception.
