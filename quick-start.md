@@ -31,7 +31,7 @@ Both approaches share the first 4 steps. All of them related to your pom file.
         <dependency>
             <groupId>com.github.cloudyrock.mongock</groupId>
             <artifactId>mongock-bom</artifactId>
-            <version>LAST_RELASE_VERSION_4</version>
+            <version>LAST_RELEASE_VERSION_4</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>
