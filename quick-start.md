@@ -101,7 +101,7 @@ Both approaches share the first 4 steps. All of them related to your pom file.
 {% endtab %}
 {% endtabs %}
 
-3-  **Import your MongoDB and Spring Data dependencies**. In order to avoid transitive dependency issues, Mongock doesn't import any MongoDB or Spring Data library. So you need to provide them. For more information, check the [driver compatibility table](spring.md#driver-types-and-compatibility-table).
+4-  **Import your MongoDB and Spring Data dependencies**. In order to avoid transitive dependency issues, Mongock doesn't import any MongoDB or Spring Data library. So you need to provide them. For more information, check the [driver compatibility table](spring.md#driver-types-and-compatibility-table).
 
 {% tabs %}
 {% tab title="Spring data 3" %}
