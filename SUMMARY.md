@@ -18,4 +18,5 @@
 * [Recovery\(coming soon\)](recovery.md)
 * [Undo\(coming soon\)](undo.md)
 * [Releases](releases.md)
+* [Compatibility versions table](compatibility-versions-table.md)
 
