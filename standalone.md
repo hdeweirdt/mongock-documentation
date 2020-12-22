@@ -168,8 +168,8 @@ builder
       <td style="text-align:left">
         <p></p>
         <ul>
-          <li>springframework: 5.2.6.RELEASE</li>
-          <li>springboot: 2.2.6.RELEASE</li>
+          <li>springframework: 5.2.12.RELEASE</li>
+          <li>springboot: 2.3.7.RELEASE</li>
         </ul>
       </td>
       <td style="text-align:left">
