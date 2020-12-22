@@ -6,55 +6,10 @@
 {% tab title="Spring 5 runner" %}
 ### Mongock Spring 5 runner
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">
-        <p>Mongock</p>
-        <p>Version</p>
-      </th>
-      <th style="text-align:left">
-        <p>Spring</p>
-        <p></p>
-      </th>
-      <th style="text-align:left">Spring boot</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left"><b>&gt;4.2.8.BETA</b>
-      </td>
-      <td style="text-align:left">
-        <p><b>5.2.6.</b>
-        </p>
-        <p><b>RELEASE</b>
-        </p>
-      </td>
-      <td style="text-align:left">
-        <p><b>2.2.12.</b>
-        </p>
-        <p><b>RELEASE</b>
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><b>&gt;=4.2.8.BETA</b>
-      </td>
-      <td style="text-align:left">
-        <p><b>5.2.12.</b>
-        </p>
-        <p><b>RELEASE</b>
-        </p>
-      </td>
-      <td style="text-align:left">
-        <p><b>2.3.7.</b>
-        </p>
-        <p><b>RELEASE</b>
-        </p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Mongock ****Version | Spring Version | Spring boot Version |
+| :--- | :--- | :--- |
+| **&lt;4.2.8.BETA** | **5.2.6.RELEASE** | **2.2.12.RELEASE** |
+| **&gt;=4.2.8.BETA** | **5.2.12.RELEASE** | **2.3.7.RELEASE** |
 {% endtab %}
 
 {% tab title="Standalone runner" %}
@@ -111,7 +66,7 @@ This runner doesn't depend on any framework
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"><b>&gt;4.2.8.BETA</b>
+      <td style="text-align:left"><b>&lt;4.2.8.BETA</b>
       </td>
       <td style="text-align:left">
         <p><b>5.2.6.</b>
@@ -208,7 +163,7 @@ This runner doesn't depend on any framework
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"><b>&gt;4.2.8.BETA</b>
+      <td style="text-align:left"><b>&lt;4.2.8.BETA</b>
       </td>
       <td style="text-align:left">
         <p><b>5.2.6.</b>
@@ -305,7 +260,7 @@ This runner doesn't depend on any framework
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"><b>&gt;4.2.8.BETA</b>
+      <td style="text-align:left"><b>&lt;4.2.8.BETA</b>
       </td>
       <td style="text-align:left"></td>
       <td style="text-align:left"></td>
@@ -372,7 +327,7 @@ This runner doesn't depend on any framework
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"><b>&gt;4.2.8.BETA</b>
+      <td style="text-align:left"><b>&lt;4.2.8.BETA</b>
       </td>
       <td style="text-align:left"></td>
       <td style="text-align:left"></td>
