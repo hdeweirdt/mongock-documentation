@@ -293,8 +293,7 @@ This runner doesn't depend on any framework
     <tr>
       <th style="text-align:left">
         <p>Mongock</p>
-        <p>Spring 5
-          <br />runner</p>
+        <p>Version</p>
       </th>
       <th style="text-align:left">
         <p>Spring</p>
