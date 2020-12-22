@@ -6,7 +6,7 @@
 * [ChangeLogs](changelogs.md)
 * [Driver](spring.md)
 * [Runner](standalone.md)
-* [Compatibility versions table](compatibility-versions-table.md)
+* [Version compatibility table](compatibility-versions-table.md)
 * [Lock](lock-1.md)
 * [Using custom beans in changeSet methods](injecting-custom-dependencies-to-changesets.md)
 * [Spring specific features](spring-profiles.md)

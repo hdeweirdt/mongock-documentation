@@ -1,4 +1,4 @@
-# Compatibility versions table
+# Version compatibility table
 
 ## Runner compatibility versions
 
