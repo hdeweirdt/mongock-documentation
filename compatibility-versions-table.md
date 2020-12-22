@@ -18,28 +18,6 @@
         <p></p>
       </th>
       <th style="text-align:left">Spring boot</th>
-      <th style="text-align:left">
-        <p>MongoDB</p>
-        <p>driver
-          <br />sync</p>
-        <p>version 4</p>
-      </th>
-      <th style="text-align:left">
-        <p>Spring</p>
-        <p>Data</p>
-        <p>version 3</p>
-      </th>
-      <th style="text-align:left">
-        <p>MongoDB</p>
-        <p>java</p>
-        <p>driver</p>
-        <p>Version 3</p>
-      </th>
-      <th style="text-align:left">
-        <p>Spring</p>
-        <p>Data</p>
-        <p>version 2</p>
-      </th>
     </tr>
   </thead>
   <tbody>
@@ -58,10 +36,6 @@
         <p><b>RELEASE</b>
         </p>
       </td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
     </tr>
     <tr>
       <td style="text-align:left"><b>&gt;=4.2.8.BETA</b>
@@ -78,10 +52,6 @@
         <p><b>RELEASE</b>
         </p>
       </td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
     </tr>
   </tbody>
 </table>
@@ -90,36 +60,7 @@
 {% tab title="Standalone runner" %}
 ### Mongock Standalone runner
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">
-        <p>Mongock</p>
-        <p>Spring 5
-          <br />runner</p>
-      </th>
-      <th style="text-align:left">
-        <p>Spring</p>
-        <p></p>
-      </th>
-      <th style="text-align:left">Spring boot</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left"><b>&gt;4.2.8.BETA</b>
-      </td>
-      <td style="text-align:left">not used</td>
-      <td style="text-align:left">not used</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><b>&gt;=4.2.8.BETA</b>
-      </td>
-      <td style="text-align:left">not used</td>
-      <td style="text-align:left">not used</td>
-    </tr>
-  </tbody>
-</table>
+This runner doesn't depend on any framework
 {% endtab %}
 {% endtabs %}
 

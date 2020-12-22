@@ -130,5 +130,64 @@ builder
 
 
 
+## Runners types and compatibility table
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left"><b>Mongock runner</b>
+      </th>
+      <th style="text-align:left"><b>Framework</b>
+      </th>
+      <th style="text-align:left"><b>Mongock drivers compatible</b>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left"><b>mongock-standalone</b>
+      </td>
+      <td style="text-align:left">none</td>
+      <td style="text-align:left">
+        <p></p>
+        <ul>
+          <li><b>mongodb-v3-driver: 4.x</b>
+          </li>
+          <li><b>mongodb-sync-v4-driver: 4.x</b>
+          </li>
+          <li><b>mongodb-springdata-v2-driver: 4.x</b>
+          </li>
+          <li><b>mongodb-springdata-v3-driver: 4.x</b>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>mongock-spring-v5</b>
+      </td>
+      <td style="text-align:left">
+        <p></p>
+        <ul>
+          <li>springframework: 5.2.6.RELEASE</li>
+          <li>springboot: 2.2.6.RELEASE</li>
+        </ul>
+      </td>
+      <td style="text-align:left">
+        <p></p>
+        <ul>
+          <li><b>mongodb-v3-driver: 4.x</b>
+          </li>
+          <li><b>mongodb-sync-v4-driver: 4.x</b>
+          </li>
+          <li><b>mongodb-springdata-v2-driver: 4.x</b>
+          </li>
+          <li><b>mongodb-springdata-v3-driver: 4.x</b>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ##  
 
