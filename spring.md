@@ -43,7 +43,7 @@ Currently Mongock provides the following drivers:
     <tr>
       <td style="text-align:left"><b>mongodb-v3-driver</b>
       </td>
-      <td style="text-align:left">org.mongodb: mongo.java.driver: 3.11.0</td>
+      <td style="text-align:left">org.mongodb: mongo.java.driver: 3.11.2</td>
       <td style="text-align:left">
         <p></p>
         <ul>
@@ -57,7 +57,7 @@ Currently Mongock provides the following drivers:
     <tr>
       <td style="text-align:left"><b>mongodb-sync-v4-driver</b>
       </td>
-      <td style="text-align:left">org.mongodb: mongodb-driver-sync: 4.0.2</td>
+      <td style="text-align:left">org.mongodb: mongodb-driver-sync: 4.0.5</td>
       <td style="text-align:left">
         <p></p>
         <ul>
@@ -71,8 +71,9 @@ Currently Mongock provides the following drivers:
     <tr>
       <td style="text-align:left"><b>mongodb-springdata-v2-driver</b>
       </td>
-      <td style="text-align:left">org.springframework.data: spring-data-mongodb: 2.2.4.RELEASE</td>
-      <td style="text-align:left">
+      <td style="text-align:left">org.springframework.data: spring-data-mongodb: 2.2.12.RELEASE</td>
+      <td
+      style="text-align:left">
         <p></p>
         <ul>
           <li><b>mongock-standalone: 4.x</b>
@@ -80,12 +81,12 @@ Currently Mongock provides the following drivers:
           <li><b>mongock-spring-v5: 4.x</b>
           </li>
         </ul>
-      </td>
+        </td>
     </tr>
     <tr>
       <td style="text-align:left"><b>mongodb-springdata-v3-driver</b>
       </td>
-      <td style="text-align:left">org.springframework.data: spring-data-mongodb: 3.0.0.RELEASE</td>
+      <td style="text-align:left">org.springframework.data: spring-data-mongodb: 3.0.6.RELEASE</td>
       <td style="text-align:left">
         <p></p>
         <ul>
