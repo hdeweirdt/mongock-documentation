@@ -12,7 +12,7 @@ The best way to explain the concept to developers is to provide some code.
 mongock:
 #...other configuration
   legacy-migration:
-    collection-name: dbchangelog
+    origin: dbchangelog
     changes-count-expectation: 2
     run-always: false
     mapping-fields:
@@ -36,7 +36,7 @@ field.setChangeSetMethod("legacyChangeSetMethodField");
     field.setMetadata("legacyMetadataField");
 
 MongockLegacyMigration legacyMigration = new MongockLegacyMigration();
-legacyMigration.setCollectionName("dbchangelog");
+legacyMigration.setOrigin("dbchangelog");
 legacyMigration.setChangesCountExpectation(2);
 legacyMigration.setRunAlways(false);
 legacyMigration.setMappingFields(field);
@@ -56,7 +56,8 @@ Once finished, if the property changes-count-expectation is specified, will thro
 
 | **Field** | **Type** | **Default** | **Description** |
 | :--- | :---: | :---: | :--- |
-| **collection-name** | **String** | **Mandatory**  | **Name of the collection where Mongock will find the changes already applied by another framework** |
+| **origin** | **String** | **Mandatory**  | **Name of the repository origin where Mongock will find the changes already applied by another framework** |
+| collection-name | String | Mandatory  | **Deprecated.** Use origin instead |
 | changes-count-expectation | String | optional | Expected number of changes that must be migrated. If this property is not specified, Mongock won't perform any check. |
 | run-always | String | optional | If true, Mongock will run this process in every execution. False by default. |
 | mapping-fields | Map | optional | This tells Mongock how to map the fields from the legacy changeLog collection to the Mongock's one. If not specified, will take the default values as indicated in the following table. |
@@ -76,6 +77,6 @@ Once finished, if the property changes-count-expectation is specified, will thro
 Migrating from the deprecated framework Mongobee will be probably the most common case for legacy migrations. Although Mongock has evolved and become a much more powerful and sophisticated framework than its predecessor , it initially started as a Mongobee fork. That's why they share the core fields in the changeLog collection. This makes very easy the migration from Mongobee to Mongock.
 
 {% hint style="success" %}
-When migrating from Mongobee to Mongock, you only need to specify the `legacy-migration.collection-name` property, whose value will be most of the times`dbchangelog.` 
+When migrating from Mongobee to Mongock, you only need to specify the `legacy-migration.origin` property, whose value will be most of the times`dbchangelog.` 
 {% endhint %}
 
