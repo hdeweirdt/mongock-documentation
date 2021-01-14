@@ -65,7 +65,7 @@ builder
     "executionMillis": {
         "$numberLong": "1"
     },
-    "_class": "io.mongock.driver.api.entry.ChangeEntry$1"
+    "_class": "io.changock.driver.api.entry.ChangeEntry$1"
 }
 ```
 
@@ -106,7 +106,7 @@ public class ClientInitializerChangeLog {
     "executionMillis": {
         "$numberLong": "-1"
     },
-    "_class": "io.mongock.driver.api.entry.ChangeEntry$1"
+    "_class": "io.changock.driver.api.entry.ChangeEntry$1"
 }
 ```
 
