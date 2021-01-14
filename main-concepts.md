@@ -4,7 +4,7 @@ This page explains all the essential concepts you will need to know to understan
 
 ## Mongock structure
 
-Mongock, as [Changock](./#what-is-changock) specialisation for MongoDB,  consists in 3 main type of objects: ChangeLogs, driver and runner. Builders are simply used to configure and build these 3 components.
+Mongock consists in 3 main type of objects: ChangeLogs, driver and runner. Builders are simply used to configure and build these 3 components.
 
 ## ChangeLogs
 
@@ -28,7 +28,7 @@ public class ClientInitializerChangeLog {
 
 ## Driver
 
-This is the Changock's driver concept taken to a lower level: MongoDB version, MongoDB Java driver and library. The driver is responsible for dealing with the specific database driver or library wrapping the database access such as [Spring data](https://spring.io/projects/spring-data-mongodb). Currently Mongock provides the following drivers:
+The driver is responsible of dealing with the specific database driver or library wrapping the database access such as [Spring data](https://spring.io/projects/spring-data-mongodb). Currently Mongock provides the following drivers:
 
 * mongodb-v3-driver
 * mongodb-sync-v4-driver
@@ -43,7 +43,7 @@ Although one of the main goals of this is to keep providing support for legacy d
 
 ## Runner
 
-This is also the same Changock concept, just specialised for MongoDB. Runners are the ones dealing with the process logic and framework. For example, there is a runner for Java standalone applications\(with no framework at all\) or for specific frameworks\(and versions\), if it's needed or useful. Currently Mongock provides the following runners:
+Runners are the ones dealing with the process logic and framework. For example, there is a runner for Java standalone applications\(with no framework at all\) or for specific frameworks\(and versions\), if it's needed or useful. Currently Mongock provides the following runners:
 
 * mongock-standalone
 * mongock-spring-v5
@@ -56,7 +56,7 @@ When using MongockStandalone, once you have built the runner instance,  you need
 
 ## Builder
 
-Once again, it's the same as the Changock concept: The mechanism to build a Mongock instance\(with the specific driver\) to process your migrations. 
+The mechanism to build a Mongock instance\(with the specific driver\) to process your migrations. 
 
 In version 4 we have added a new approach in Spring based on annotation that makes all the work for you. However, if you need to have more control over the bean creation or you are not using Spring or any other reason, you still have the manual builder approach available.
 
