@@ -41,6 +41,7 @@ The **@ChangeSet** parameters are:
 | order | String | null | String for sorting change sets in one changeLog. Sorting in alphabetical order, ascending. It can be a number, a date etc. |
 | runAlways | Boolean | false | If true, changeSet will always be executed |
 | systemVersion | String | "0" | Defines which SystemVersion the changeSet is linked to.  See [System Version]() for more information. |
+| failFast | boolean | true | When false, Mongock won't abort the migration in case of any exception during the method's execution.  |
 
 ### Defining ChangeSet methods
 
@@ -127,11 +128,5 @@ mongock:
 
 This example will execute changeSet methods 1, 2 and 3, because the specified systemVersion in the changeSet should be greater equals the **startSystemVersion** and lower than **endSystemVersion**. In other words, startSystemVersion is inclusive, while endSystemVersion is not.
 
-## Best practices
 
-There are too many ways to approach the changeLog's design, we list the points we think best:
-
-#### ChangeLog per migration, instead of ChangeLog per class domain
-
-Imagine you have two domain classes, Client and Product. Developers tend to split their changeLogs in ClientChangeLog and ProductChangeLog and then, they update those ChangeLogs in every migration. While this can make sense, specially when the developer is familiar with domain driven design, it's normally not the best approach. In this context, the domain loses a bit its importance and it's given to the migration. In this terms is more important to separate which "package" of migration has been executed in....
 
