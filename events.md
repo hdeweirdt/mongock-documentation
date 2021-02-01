@@ -4,11 +4,7 @@ description: (in construction)
 
 # Events
 
-{% hint style="info" %}
-Feature in beta version and documentation in construction
-{% endhint %}
-
-#### **Since version 4.2.1.BETA**
+#### _Since version 4.2.1.BETA_
 
 Mongock uses events as a way to notify the main application in which state is the Mongock process and eventually the result of the execution.
 
