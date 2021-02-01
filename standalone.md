@@ -41,10 +41,6 @@ However, if you opt for the manual builder approach, you need to build the runne
 | :--- | :--- | :--- | :--- | :--- |
 | **changeLogScanPackage** | mandatory. At least one. | List&lt;String&gt; | Instructs Mongock where to find the changeLog classes.  | [link](changelogs.md) |
 | **springContext** | mandatory for Spring | ApplicationContext | Sets the spring Application context for bean injections into ChangeSet methods. It's where the custom beans, MongoTemplate, profiles, etc. is take from. | [link](further-configuration.md#spring-context) |
-| **eventPublisher** | null | ApplicationEvent Publisher | Sets the spring application event publisher to be able to handle the life cycle events | [link](events.md#working-with-spring-runners) |
-| **migrationStartedListener** | null | Runnable | Handler for standalone start event | [link](events.md#working-with-standalone-runners) |
-| **migrationSuccessListener** | null | Consumer for Standalone Migration SuccessEvent | Handler for standalone success event | [link](events.md#working-with-standalone-runners) |
-| **migrationFailureListener** | null | Consumer for Standalone Migration FailureEvent | Handler for standalone failure events | [link](events.md#working-with-standalone-runners) |
 | **metadata** | null | Map&lt;String, Object&gt; | Custom data attached to the migration. It will added to all changes in changeLog collection | [link](further-configuration.md#metadata) |
 | **startSystemVersion** | "0" | String | System version to start with | [link](further-configuration.md#systemversion) |
 | **endSystemVersions** | MAX\_VALUE | String | System version to end with. | [link](further-configuration.md#systemversion) |
@@ -89,10 +85,9 @@ mongock:
 {% tab title="mongock-spring-v5" %}
 ```java
 builder
-    .addChangeLogsScanPackage("com.your.changelog.package")
-    .addChangeLogsScanPackage("com.your.changelog.package")
+    .addChangeLogsScanPackage("com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.initializer")
+    .addChangeLogsScanPackage("com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.updater")
     .setSpringContext(springContext)
-    .setEventPublisher(applicationEventPusblisher)
     .withMetadata(
         new HashMap(){{
           put("change-motivation", "Missing field in collection");
@@ -102,13 +97,7 @@ builder
     .setEndSystemVersion("6.4")
     .setLockConfig(10,4,5)
     .setLegacyMigration(new MongockLegacyMigration(
-        "mongobeeChangeLogCollection", 
-        true, 
-        "legacyChangeIdField", 
-        "legacyAuthorField", 
-        "legacyTimestampField", 
-        "legacyChangeLogClassField", 
-        "legacyChangeSetMethodField"))
+        "mongobeeChangeLogCollection", true, "legacyChangeIdField", "legacyAuthorField", "legacyTimestampField", "legacyChangeLogClassField", "legacyChangeSetMethodField"))
     .setTrackIgnored(true)
     .setEnabled(true)
 
@@ -118,8 +107,8 @@ builder
 {% tab title="standalone" %}
 ```java
 builder
-    .addChangeLogsScanPackage("com.your.changelog.package")
-    .addChangeLogsScanPackage("com.your.changelog.package")
+    .addChangeLogsScanPackage("com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.initializer")
+    .addChangeLogsScanPackage("com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.updater")
     .withMetadata(
         new HashMap(){{
           put("change-motivation", "Missing field in collection");
@@ -129,19 +118,9 @@ builder
     .setEndSystemVersion("6.4")
     .setLockConfig(10,4,5)
     .setLegacyMigration(new MongockLegacyMigration(
-        "mongobeeChangeLogCollection", 
-        true, 
-        "legacyChangeIdField", 
-        "legacyAuthorField", 
-        "legacyTimestampField", 
-        "legacyChangeLogClassField", 
-        "legacyChangeSetMethodField"))
-    .setTrackIgnored(true)
+        "mongobeeChangeLogCollection", true, "legacyChangeIdField", "legacyAuthorField", "legacyTimestampField", "legacyChangeLogClassField", "legacyChangeSetMethodField"))
     .setTrackIgnored(true)
     .setEnabled(true)
-    .setMigrationStartedListener(()-> {/**TODO your business logic**/ })
-    .setMigrationSuccessListener(successEvent-> {/**TODO your business logic**/ })
-    .setMigrationFailureListener(failureEvent-> {/**TODO your business logic**/ })
     .execute();
 ```
 {% endtab %}
