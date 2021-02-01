@@ -41,6 +41,10 @@ However, if you opt for the manual builder approach, you need to build the runne
 | :--- | :--- | :--- | :--- | :--- |
 | **changeLogScanPackage** | mandatory. At least one. | List&lt;String&gt; | Instructs Mongock where to find the changeLog classes.  | [link](changelogs.md) |
 | **springContext** | mandatory for Spring | ApplicationContext | Sets the spring Application context for bean injections into ChangeSet methods. It's where the custom beans, MongoTemplate, profiles, etc. is take from. | [link](further-configuration.md#spring-context) |
+| **eventPublisher** | null | ApplicationEvent Publisher | Sets the spring application event publisher to be able to handle the life cycle events | [link](events.md#working-with-spring-runners) |
+| **migrationStartedListener** | null | Runnable | Handler for standalone start event | [link](events.md#working-with-standalone-runners) |
+| **migrationSuccessListener** | null | Consumer for Standalone Migration SuccessEvent | Handler for standalone success event | [link](events.md#working-with-standalone-runners) |
+| **migrationFailureListener** | null | Consumer for Standalone Migration FailureEvent | Handler for standalone failure events | [link](events.md#working-with-standalone-runners) |
 | **metadata** | null | Map&lt;String, Object&gt; | Custom data attached to the migration. It will added to all changes in changeLog collection | [link](further-configuration.md#metadata) |
 | **startSystemVersion** | "0" | String | System version to start with | [link](further-configuration.md#systemversion) |
 | **endSystemVersions** | MAX\_VALUE | String | System version to end with. | [link](further-configuration.md#systemversion) |
