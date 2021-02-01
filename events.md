@@ -18,13 +18,13 @@ There is a big different in the approach, depending on which type of runner is u
 
 Mongock provides three types of events:
 
-* Started event: This event takes place just before starting the migration, after the validation.
-* Success event: Is raised after the migration runs, if successful. This means, that no exception occurred, they were handled or the failed changeLogs were marked with failFast to false.
-* Failure event: In contrast, if any of the changeLogs fails and it's not handled, as explained in the previous point, this event will be raised.
+* **Start event**: This event takes place just before starting the migration, after the validation.
+* **Success event**: Is raised after the migration runs, if successful. This means, that no exception occurred, they were handled or the failed changeLogs were marked with failFast to false.
+* **Failure event**: In contrast, if any of the changeLogs fails and it's not handled, as explained in the previous point, this event will be raised.
 
 Please notice that there is no scenario in which both events, success and failure, are raised together.
 
-### Working with Spring
+## Working with Spring runners
 
 Spring Mongock uses the events framework provided by Spring. This means there are two requirements for events to work with Mongock: 
 
@@ -87,23 +87,53 @@ implements ApplicationListener<SpringMigrationFailureEvent> {
 {% endtab %}
 {% endtabs %}
 
-### DbMigrationSuccessEvent
+## Working with Standalone runners
 
-This events is thrown when the migration has finished successfully.
+As explained, if you are using the standalone runner, you need to provide explicit handlers for each event at building time.
 
-## How to use it
+However, the handler are slightly different depending on which type of event you are subscribing to.
 
-### With spring runner
+* **Start event**: It requires a Runnable, which is invoked just before the migration and after the Mongock's validation.
+* **Success event**: To handle this event, you need to provide to the Mongock builder a Consumer for `StandaloneMigrationSuccessEvent`.
+* **Failure event**: To handle this event, you need to provide to the Mongock builder a Consumer for `StandaloneMigrationFailureEvent`.
 
-With Spring Mongock uses the buildup events framework provides by Spring. So there are two requirements for events to work with Mongock: Provide the Spring ApplicationEventPublisher and register the listener for the events you want to manage.
+{% tabs %}
+{% tab title="Started event" %}
+```java
+import com.github.cloudyrock.standalone;
 
-### With standalone
+MongockStandalone.builder
+//...
+.setMigrationStartedListener(()-> {/** TODO your business logic  **/ })
+```
+{% endtab %}
 
-In this case you don't have a framework around you to provide the events ecosystem, so you need to provide two handles for both events, success and fail migration events...
+{% tab title="Success event" %}
+```java
+import com.github.cloudyrock.standalone;
+import com.github.cloudyrock.standalone.event.StandaloneMigrationSuccessEvent;
+
+MongockStandalone.builder
+//...
+.setMigrationSuccessListener(successEvent-> {/** TODO your business logic  **/ })
+```
+{% endtab %}
+
+{% tab title="Failure event" %}
+```java
+import com.github.cloudyrock.standalone;
+import com.github.cloudyrock.standalone.event.StandaloneMigrationFailureEvent;
+
+MongockStandalone.builder
+//...
+.setMigrationFailureListener(failureEvent-> {/** TODO your business logic  **/ })
+```
+{% endtab %}
+{% endtabs %}
 
 
 
- 
 
-\*\*\*\*
+
+
 
