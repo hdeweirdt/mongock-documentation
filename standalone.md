@@ -139,6 +139,9 @@ builder
     .setTrackIgnored(true)
     .setTrackIgnored(true)
     .setEnabled(true)
+    .setMigrationStartedListener(()-> {/**TODO your business logic**/ })
+    .setMigrationSuccessListener(successEvent-> {/**TODO your business logic**/ })
+    .setMigrationFailureListener(failureEvent-> {/**TODO your business logic**/ })
     .execute();
 ```
 {% endtab %}
