@@ -89,9 +89,10 @@ mongock:
 {% tab title="mongock-spring-v5" %}
 ```java
 builder
-    .addChangeLogsScanPackage("com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.initializer")
-    .addChangeLogsScanPackage("com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.updater")
+    .addChangeLogsScanPackage("com.your.changelog.package")
+    .addChangeLogsScanPackage("com.your.changelog.package")
     .setSpringContext(springContext)
+    .setEventPublisher(applicationEventPusblisher)
     .withMetadata(
         new HashMap(){{
           put("change-motivation", "Missing field in collection");
@@ -101,7 +102,13 @@ builder
     .setEndSystemVersion("6.4")
     .setLockConfig(10,4,5)
     .setLegacyMigration(new MongockLegacyMigration(
-        "mongobeeChangeLogCollection", true, "legacyChangeIdField", "legacyAuthorField", "legacyTimestampField", "legacyChangeLogClassField", "legacyChangeSetMethodField"))
+        "mongobeeChangeLogCollection", 
+        true, 
+        "legacyChangeIdField", 
+        "legacyAuthorField", 
+        "legacyTimestampField", 
+        "legacyChangeLogClassField", 
+        "legacyChangeSetMethodField"))
     .setTrackIgnored(true)
     .setEnabled(true)
 
@@ -111,8 +118,8 @@ builder
 {% tab title="standalone" %}
 ```java
 builder
-    .addChangeLogsScanPackage("com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.initializer")
-    .addChangeLogsScanPackage("com.github.cloudyrock.mongock.integrationtests.spring5.springdata3.changelogs.client.updater")
+    .addChangeLogsScanPackage("com.your.changelog.package")
+    .addChangeLogsScanPackage("com.your.changelog.package")
     .withMetadata(
         new HashMap(){{
           put("change-motivation", "Missing field in collection");
@@ -122,7 +129,14 @@ builder
     .setEndSystemVersion("6.4")
     .setLockConfig(10,4,5)
     .setLegacyMigration(new MongockLegacyMigration(
-        "mongobeeChangeLogCollection", true, "legacyChangeIdField", "legacyAuthorField", "legacyTimestampField", "legacyChangeLogClassField", "legacyChangeSetMethodField"))
+        "mongobeeChangeLogCollection", 
+        true, 
+        "legacyChangeIdField", 
+        "legacyAuthorField", 
+        "legacyTimestampField", 
+        "legacyChangeLogClassField", 
+        "legacyChangeSetMethodField"))
+    .setTrackIgnored(true)
     .setTrackIgnored(true)
     .setEnabled(true)
     .execute();
