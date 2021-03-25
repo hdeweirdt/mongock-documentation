@@ -1,6 +1,6 @@
 # What is Mongock
 
-## What is Mongock
+## What is Mongock?
 
 **Mongock** is a java MongoDB tool for tracking, managing and applying database schema changes across all your environments based on a coding approach.
 
