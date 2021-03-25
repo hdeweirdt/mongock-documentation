@@ -111,7 +111,7 @@ When specifying versions you are able to upgrade to specific versions:
 ```yaml
 mongock:
   start-system-version: 1
-  end-system-version: 2.5.5
+  end-system-version: 2.5.1
 ```
 {% endtab %}
 
@@ -120,13 +120,13 @@ mongock:
   mongockBuilder
       //...
       .setStartSystemVersion("1")
-      .setEndSystemVersion("2.5.5")
+      .setEndSystemVersion("2.5.1")
       //... 
 ```
 {% endtab %}
 {% endtabs %}
 
-This example will execute changeSet methods 1, 2 and 3, because the specified systemVersion in the changeSet should be greater equals the **startSystemVersion** and lower than **endSystemVersion**. In other words, startSystemVersion is inclusive, while endSystemVersion is not.
+This example will execute changeSet methods 1, 2 and 3, because the specified systemVersion in the changeSet should be greater equals the **startSystemVersion** and lower equals the **endSystemVersion**. In other words, both startSystemVersion and endSystemVersion are inclusive.
 
 
 
