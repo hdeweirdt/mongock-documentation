@@ -87,7 +87,8 @@ Driver configuration is very simple, but there are still a couple of properties 
       <td style="text-align:left">
         <p></p>
         <p>Max minutes mongock will wait for the lock in every try. If the time the
-          lock is reserved for is greater than this value, an exception is thrown.</p>
+          lock is reserved for is greater than this value, a LockCheckException is
+          thrown.</p>
       </td>
     </tr>
     <tr>
