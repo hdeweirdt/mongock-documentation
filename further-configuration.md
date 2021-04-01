@@ -329,3 +329,34 @@ and the `mongockLock`indexes:
 ]
 ```
 
+## service-identifier
+
+Mongock keep track of hostname's executor in the `changeLogCollection`. You can suffix the hostname with `serviceIdentifier` to distinguish multiple instances of your service.
+
+{% tabs %}
+{% tab title="properties" %}
+```yaml
+mongock:
+  #...
+  service-identifier: "myService"
+    
+```
+{% endtab %}
+
+{% tab title="mongock-spring-v5" %}
+```java
+builder
+    .addChangeLogsScanPackage("com.github.cloudyrock.mongock.client.initializer")
+    .setSpringContext(springContext)
+    .setServiceIdentifier("myService")
+```
+{% endtab %}
+
+{% tab title="standalone" %}
+```java
+builder
+    .addChangeLogsScanPackage("com.github.cloudyrock.mongock.client.initializer")
+    .setServiceIdentifier("myService")
+```
+{% endtab %}
+{% endtabs %}
