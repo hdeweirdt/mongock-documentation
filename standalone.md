@@ -27,7 +27,7 @@ It does not used any framework support for its execution. Ideally when running s
 
 Based on Spring 5 and Spring Boot 2, its objetive to provide the easiest way to run Mongock with it. It provide support for Spring profiles, context, properties, annotation approach based on Spring configuration, etc.
 
-Unlike Mongock standalone, it provides two building approach: the traditional builder approach and annotation approach\(**@EnabbleMongock**\)
+Unlike Mongock standalone, it provides two building approach: the traditional builder approach and annotation approach\(**@EnableMongock**\)
 
 ## Building time: Runner
 
